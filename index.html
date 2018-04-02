@@ -1,61 +1,140 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="cs" dir="ltr">
   <head>
     <meta charset="utf-8">
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- open graph protocol -->
+    <meta name="description" content="JAZZ | ELEKTRONIKA | DIVADLO">
+    <meta name="twitter:description" content="JAZZ | ELEKTRONIKA | DIVADLO">
+    <meta property="og:title" content="Letiště Festival" />
+    <meta property="og:url" content="http://letiste2018.cz/" />
+    <meta property="og:description" content="JAZZ | ELEKTRONIKA | DIVADLO">
+    <meta property="og:image" content="http://letiste2018.cz/images/og_image.png">
+    <meta property="og:image:alt" content="Logo">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:secure_url" content="https://letiste2018.cz/images/og_image.png">
+    <meta property="og:image:width" content="300">
+    <meta property="og:image:height" content="200">
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="cs_CZ" />
+    <!-- no cache -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- favicons -->
+    <link rel="canonical" href="http://letiste2018.cz/">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="favicons/site.webmanifest">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#826c6c">
     <!-- CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css_custom/main.css" rel="stylesheet">
+    <link href="css_custom/genre_box.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <link  href="jquery/fancybox/dist/jquery.fancybox.min.css" rel="stylesheet">
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+    <!-- scripts -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="scripts/blink.js"></script>
+    <script src="jquery/fancybox/dist/jquery.fancybox.min.js"></script>
+    <script src="scripts/artist-gallery.js"></script>
     <title>Let18</title>
   </head>
   <body>
-    <div class="container vertical-center">
-      <div class="col-xs">
-          <img class="logo blue-shadow" src="images/logo-w.png" alt="logo">
-      </div>
-      <!-- Menu -->
-      <div class="btns">
-        <div class="col-xs text-center">
-            <a href="#" class="btn">&nbsp;&nbsp;&nbsp;&nbsp;Jazz&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    <div class="container">
+      <div class="center-box">
+        <div class="col-xs">
+          <img class="logo blue-shadow" src="images/logo-w.png" id="logo" alt="logo">
         </div>
-        <div class="col-xs text-center">
-            <a href="#" class="btn">&nbsp;&nbsp;Elektronika&nbsp;&nbsp;</a>
+            <!-- Menu -->
+          <div class="btns">
+            <div class="col-xs text-center">
+              <a data-fancybox
+                data-src="#hidden-content"
+                href="#"
+                class="btn"
+                onclick="showGallery(this.id)"
+                id="jazz">
+                Jazz
+              </a>
+            </div>
+            <div class="col-xs text-center">
+              <a data-fancybox
+                data-src="#hidden-content"
+                href="javascript:;"
+                class="btn"
+                onclick="showGallery(this.id)"
+                id="elektronika">
+                Elektronika
+              </a>
+            </div>
+            <div class="col-xs text-center">
+              <a data-fancybox
+                data-src="#hidden-content"
+                href="javascript:;"
+                class="btn"
+                onclick="showGallery(this.id)"
+                id="divadlo">
+                Divadlo
+              </a>
+              <div class="modal-container"
+                    style="display: none; border-radius: 0.9em; margin: 0; padding: 0; text-align: center" id="hidden-content">
+                <!-- <div class="modal-dialog"> -->
+                  <!-- <div class="modal-content"> -->
+                    <div class="modal-header">
+                      <div class="modal-title" id="modalTitle">
+                      </div>
+                    </div>
+                    <div class="modal-body" id="modalBody">
+                    </div>
+                    <div class="modal-footer">
+
+                    </div>
+                  <!-- </div> -->
+                <!-- </div> -->
+              </div>
+          </div>
         </div>
-        <div class="col-xs text-center">
-            <a href="#" class="btn">&nbsp;&nbsp;Divadlo&nbsp;&nbsp;</a>
-        </div>
-      </div>
-      <!-- Letiště -->
-      <div class="pismena">
-        <div class="col-xs pismeno-box">
+        <!-- Letiště -->
+        <div class="pismena">
+          <div class="col-xs pismeno-box">
             <img class="pismeno" src="images/pismena/l.png" alt="L" id="l" onload="blinkRandom()">
-        </div>
-        <div class="col-xs pismeno-box">
+          </div>
+          <div class="col-xs pismeno-box">
             <img class="pismeno" src="images/pismena/e.png" alt="E" id="e">
-        </div>
-        <div class="col-xs pismeno-box">
+          </div>
+          <div class="col-xs pismeno-box">
             <img class="pismeno" src="images/pismena/t.png" alt="T" id="t">
-        </div>
-        <div class="col-xs pismeno-box">
+          </div>
+          <div class="col-xs pismeno-box">
             <img class="pismeno" src="images/pismena/i.png" alt="I" id="i">
-        </div>
-        <div class="col-xs pismeno-box">
+          </div>
+          <div class="col-xs pismeno-box">
             <img class="pismeno" src="images/pismena/hacek.png" alt="S-hacek" id="hacek">
             <img class="pismeno" src="images/pismena/s.png" alt="S" id="s">
-        </div>
-        <div class="col-xs pismeno-box">
+          </div>
+          <div class="col-xs pismeno-box">
             <img class="pismeno" src="images/pismena/t.png" alt="T" id="tt">
-        </div>
-        <div class="col-xs pismeno-box">
+          </div>
+          <div class="col-xs pismeno-box">
             <img class="pismeno" src="images/pismena/hacek.png" alt="E-hacek" id="hacek_">
             <img class="pismeno" src="images/pismena/e.png" alt="E" id="ee">
+          </div>
         </div>
       </div>
     </div>
     <!-- scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+    </script>
   </body>
 </html>

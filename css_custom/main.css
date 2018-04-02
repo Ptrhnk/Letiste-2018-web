@@ -25,36 +25,71 @@ body {
 .center-block {
   float: none;
 }
+.center-box {
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  text-align: center;
+  /* background-color: rgb(66, 95, 252); */
+}
 .vertical-center {
   min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
   min-height: 100vh; /* These two lines are counted as one :-)       */
 
   display: flex;
-  align-items: center;
   flex-flow: column;
+  align-items: center;
   justify-content: center;
+
+  -webkit-flex-flow: column;
+  -webkit-align-items: center;
+  -webkit-justify-content: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
 }
 .btn {
-  margin: 0 20px;
-  height: 46px;
-  border-radius: 30px;
+  margin: 0 10px;
+  border: none;
   background-color: white;
   color: black;
   box-shadow: 1px 1px 10px rgba(255, 42, 42, 0.4);
 
-  text-decoration: none;
-  text-transform: uppercase;
   font-weight: 700;
   font-size: 15px;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 
   display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+
+  -webkit-align-items: center;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
-  align-items: center;
-  flex-flow: row wrap;
+}
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 100px;
+  /* transition: all .2s; */
+}
+.btn:active {
+  outline: none;
+  border: none;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.btn:focus {outline:0;}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 .btns {
   margin-top: 40px;
@@ -68,6 +103,7 @@ body {
   flex-flow: row;
   justify-content: center;
 }
+
 .pismena {
   margin-top: 40px;
 
