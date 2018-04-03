@@ -1,0 +1,133 @@
+body {
+  background-color: black;
+  font-family: 'Roboto', sans-serif;
+  /* font-weight: 700; */
+  /* font-size: 20px; */
+  /* line-height: 1.7; */
+}
+.logo {
+  max-height: 170px;
+  margin: 20px;
+
+  -webkit-filter: drop-shadow(0px 0px 8px #2A8EFF);
+  filter: drop-shadow(0px 0px 3px rgba(42, 44, 255, 0.8));
+}
+#hacek, #hacek_ {
+  position: absolute;
+}
+#hacek {
+  transform: translate(5%, 0);
+  -webkit-transform: translate(5%, 0);
+}
+.bgColor {
+  background-color: rgb(0, 0, 0);
+}
+.center-block {
+  float: none;
+}
+.center-box {
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  text-align: center;
+  /* background-color: rgb(66, 95, 252); */
+}
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+
+  -webkit-flex-flow: column;
+  -webkit-align-items: center;
+  -webkit-justify-content: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+}
+.button {
+  margin: 0 10px;
+  border: none;
+  background-color: white;
+  color: black;
+  box-shadow: 1px 1px 10px rgba(255, 42, 42, 0.4);
+
+  font-weight: 700;
+  font-size: 15px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+
+  -webkit-align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+}
+.button:link,
+.button:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 100px;
+  /* transition: all .2s; */
+}
+.button:active {
+  outline: none;
+  border: none;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.button:focus {outline:0;}
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.btns {
+  margin-top: 40px;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
+.pismena {
+  margin-top: 40px;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+.pismeno-box {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+
+  display: flex;
+  justify-content: center;
+
+  -webkit-filter: drop-shadow(0px 0px 4px #2A8EFF);
+  filter: drop-shadow(0px 0px 2px #2A8EFF);
+}
+.pismeno {
+  height: 116px;
+}

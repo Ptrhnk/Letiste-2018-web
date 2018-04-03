@@ -3,22 +3,12 @@ var artistElectro = ['cover_big'];
 var artistDivadlo = ['cover'];
 var genre;
 
-$('#exampleModal').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget) // Button that triggered the modal
-  var genre = button.data('genre') // Extract info from data-* attributes
-  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-  var modal = $(this)
-  modal.find('.modal-title').text(genre)
-  // modal.find('.modal-body').empty()
-})
-
 function showGallery(genre) {
 var modalBody = document.getElementById('modalBody');
 this.genre = genre;
 // header
-  // var genreEdit = genre.charAt(0).toUpperCase() + genre.slice(1);
-  // document.getElementById('modalTitle').innerHTML = genreEdit;
+  var genreEdit = genre.charAt(0).toUpperCase() + genre.slice(1);
+  document.getElementById('modalTitle').innerHTML = genreEdit;
 
 // clean up
   while (modalBody.firstChild) {
