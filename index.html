@@ -31,7 +31,7 @@
     <link rel="mask-icon" href="images/favicons/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#826c6c">
-    <!-- Bootstrap and jQuery -->
+    <!-- Bootstr4p and jQuery -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -48,46 +48,41 @@
   <body>
     <div class="container">
       <div class="center-box d-flex flex-column justify-content-center align-items-center">
+        <!-- Main logo -->
         <div class="col-xs d-flex">
           <img class="logo blue-shadow" src="images/logo-w.png" id="logo" alt="logo">
         </div>
         <!-- Menu -->
         <div class="btns d-flex flex-row">
-          <div class="white-button d-flex justify-content-center align-items-center">
-            <a data-toggle="modal"
+            <button type="button"
+              data-toggle="modal"
               data-target="#modalCenter"
-              data-genre="jazz"
-              href="javascript:;"
+              data-genre="Jazz"
               class="btn white-button"
               onclick="showGallery(this.id)"
               id="jazz">
               Jazz
-            </a>
-          </div>
-          <div class="white-button text-center">
-            <a data-toggle="modal"
+            </button type="button">
+            <button type="button"
+              data-toggle="modal"
               data-target="#modalCenter"
-              data-genre="elektronika"
-              href="javascript:;"
+              data-genre="Elektronika"
               class="btn white-button"
               onclick="showGallery(this.id)"
               id="elektronika">
               Elektronika
-            </a>
-          </div>
-          <div class="white-button text-center">
-            <a data-toggle="modal"
+            </button type="button">
+            <button type="button"
+              data-toggle="modal"
               data-target="#modalCenter"
-              data-genre="divadlo"
-              href="javascript:;"
+              data-genre="Divadlo"
               class="btn white-button"
               onclick="showGallery(this.id)"
               id="divadlo">
               Divadlo
-            </a>
-        </div>
+            </button type="button">
       </div>
-        <!-- Letiště -->
+      <!-- Písmena -->
       <div class="pismena d-flex flex-row">
           <div class="d-flex flex-row flex-nowrap">
             <img class="pismeno" src="images/pismena/l.png" alt="L" id="l" onload="blinkRandom()">
@@ -124,12 +119,14 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body d-flex flex-wrap justify-content-around" id="modalBody">
-              ...
+            <div class="modal-body">
+              <div class="container d-flex flex-row flex-wrap" id="modalBody">
+                ...
+              </div>
             </div>
             <div class="modal-footer">
+              <button type="button" class="btn btn-primary invisible" onclick="" id="back">Back</button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
             </div>
           </div>
         </div>

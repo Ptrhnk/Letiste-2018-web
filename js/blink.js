@@ -1,8 +1,26 @@
-var l, e, t, i, s, hacek, tt, ee, hacek_, logo;
-
+var l, e, t, i, s, hacek, tt, ee, hacek_, logo, pismena;
+const words = [
+  'Letišťě',
+  'Let',
+  'Letiš',
+  'Les',
+  'Lesť',
+  'Lis',
+  'Lisť',
+  'Liťé',
+  'Et',
+  'Ti',
+  'Tiť',
+  'Tišé',
+  'Isťě',
+  'Iť',
+  'ťě',
+];
+//
 function blinkRandom() {
-  var interval = setInterval("showLetter()", 180);
-  var interval = setInterval("shadowBlink()", 800);
+  // var interval = setInterval("showLetter()", 1000);
+  var interval = setInterval("randomWords()", 2000);
+  var interval = setInterval("logoBlink()", 800);
 }
 
 function showLetter() {
@@ -27,7 +45,7 @@ function showLetter() {
   }, Math.floor((Math.random() * 5000) + 300));
 }
 
-function shadowBlink() {
+function logoBlink() {
   var logo = document.getElementById("logo");
   setTimeout(function() {
     logo.style.visibility = "hidden";
@@ -37,4 +55,67 @@ function shadowBlink() {
   }, Math.floor((Math.random() * 4000) + 300));
 }
 
-// logo.style.setProperty("-webkit-filter", "drop-shadow(0px 0px 1px #2A8EFF)");
+function randomWords() {
+  l = document.getElementById("l");
+  e = document.getElementById("e");
+  t = document.getElementById("t");
+  i = document.getElementById("i");
+  s = document.getElementById("s");
+  hacek = document.getElementById("hacek");
+  tt = document.getElementById("tt");
+  ee = document.getElementById("ee");
+  hacek_ = document.getElementById("hacek_");
+
+  var word = words[Math.floor(Math.random() * words.length)].toLowerCase();
+  console.log(word);
+
+  setTimeout(function() {
+    toggleWord(word, true);
+      setTimeout(function() {
+        toggleWord(word, false)
+        //   }, Math.floor(Math.random() * 2000) + 100);
+        // }, Math.floor((Math.random() * 5000) + 300));
+    }, 1000);
+  }, 1000);
+
+  function toggleWord(word, setVisible) {
+    var visibility = setVisible ? "visible" : "hidden";
+    console.log(visibility);
+    for (var j = 0; j < word.length; j++) {
+      setTimeout(function() {
+        switch(word.charAt(j)) {
+          case 'l':
+          l.style.visibility = visibility;
+          break;
+          case 'e':
+          e.style.visibility = visibility;
+          break;
+          case 't':
+          t.style.visibility = visibility;
+          break;
+          case 'i':
+          i.style.visibility = visibility;
+          break;
+          case 's':
+          s.style.visibility = visibility;
+          break;
+          case 'š':
+          hacek.style.visibility = visibility;
+          s.style.visibility = visibility;
+          break;
+          case 'ť':
+          tt.style.visibility = visibility;
+          break;
+          case 'é':
+          ee.style.visibility = visibility;
+          break;
+          case 'ě':
+          ee.style.visibility = visibility;
+          hacek_.style.visibility = visibility;
+          break;
+        }
+      }, 500);
+    }
+  }
+
+}
