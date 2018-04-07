@@ -1,8 +1,7 @@
-var artistJazz = ['jedna', 'dva', 'tri', 'ctyri'];
+// artists declaration
+var artistJazz = ['Jedna', 'dva', 'tri', 'ctyri'];
 var artistElectro = ['nekdo'];
 var artistDivadlo = ['nekdo'];
-var genre;
-
 
 function showGallery(genre) {
   $('#modalCenter').on('show.bs.modal', function (event) {
@@ -20,12 +19,8 @@ function showGallery(genre) {
   back.onclick = function() { showGallery(genre) };
   // $("#bfCaptchaEntry").click(function(){ myFunction(); });
 
-  // header
-
-  var modalBody = document.getElementById('modalBody');
-  this.genre = genre;
-
   // clean up
+  var modalBody = document.getElementById('modalBody');
   while (modalBody.firstChild) {
       modalBody.removeChild(modalBody.firstChild);
   }
@@ -41,16 +36,55 @@ function showGallery(genre) {
     var artistNames = artistDivadlo;
     break;
   }
-  for(var i = 0; i < artistNames.length; i++) {
-    var artist = artistNames[i];
-    var a = document.createElement('a');
-    a.href = 'javascript:;';
-    a.id = i.toString();
-    console.log('artists in showGallery: ', artist);
-    a.onclick = function() { openArtist(genre, artist) };
-    a.appendChild(img_create('/artists/' + genre + '/' + artist + '.jpg'), artist, artist);
-    modalBody.appendChild(a);
+
+  var j = 0;
+  function createArtist() {
+      var artist = artistNames[j];
+      var a = document.createElement('a');
+      a.href = 'javascript:;';
+      a.id = j.toString();
+      a.onclick = function() { openArtist(genre, artist) };
+      a.appendChild(img_create('/artists/' + genre + '/' + artist + '.jpg'), artist, artist);
+      modalBody.appendChild(a);
+      j++;
+      if (j < artistNames.length) {
+        createArtist();
+      }
+    }
+
+    createArtist();
+}
+
+function openArtist(genre, artist) {
+  // TODO: improve this page!
+  var modalBody = document.getElementById('modalBody');
+  // clean up
+  while (modalBody.firstChild) {
+      modalBody.removeChild(modalBody.firstChild);
   }
+    // add back button
+  var back = document.getElementById('back');
+  back.classList.remove('invisible');
+    //
+  var div = document.createElement('div');
+
+  var divImg = document.createElement('div');
+  divImg.appendChild(img_create('/artists/' + genre + '/' + artist + '.jpg'), artist, artist);
+  var divText = document.createElement('div');
+  divText.innerHTML = readTextFile('/artists/' + genre + '/' + artist + '.txt');
+  div.appendChild(divImg);
+  div.appendChild(divText);
+  modalBody.appendChild(div);
+}
+
+
+function img_create(src, alt, title) {
+    var img = document.createElement('img');
+    img.src = src;
+    img.classList.add('cover');
+    if ( alt != null ) img.alt = alt;
+    if ( title != null ) img.title = title;
+    return img;
 }
 
 function readTextFile(file) {
@@ -67,30 +101,4 @@ function readTextFile(file) {
   }
   rawFile.send(null);
   return text;
-}
-
-function openArtist(genre, artist) {
-  var modalBody = document.getElementById('modalBody');
-  // clean up
-  while (modalBody.firstChild) {
-      modalBody.removeChild(modalBody.firstChild);
-  }
-    // add back button
-  var back = document.getElementById('back');
-  back.classList.remove('invisible');
-    console.log('artist in openArtist: ', artist);
-    //
-  var div = document.createElement('div');
-  // div.innerHTML = readTextFile('/artists/' + genre + '/' + 'nekdo' + '.txt');
-  div.innerHTML = readTextFile('/artists/' + genre + '/' + artist + '.txt');
-  modalBody.appendChild(div);
-}
-
-function img_create(src, alt, title) {
-    var img = document.createElement('img');
-    img.src = src;
-    img.classList.add('cover');
-    if ( alt != null ) img.alt = alt;
-    if ( title != null ) img.title = title;
-    return img;
 }

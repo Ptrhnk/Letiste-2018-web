@@ -18,7 +18,7 @@ const words = [
 ];
 //
 function blinkRandom() {
-  // var interval = setInterval("showLetter()", 1000);
+  var interval = setInterval("showLetter()", 800);
   var interval = setInterval("randomWords()", 2000);
   var interval = setInterval("logoBlink()", 800);
 }
@@ -67,21 +67,18 @@ function randomWords() {
   hacek_ = document.getElementById("hacek_");
 
   var word = words[Math.floor(Math.random() * words.length)].toLowerCase();
-  console.log(word);
 
   setTimeout(function() {
     toggleWord(word, true);
       setTimeout(function() {
         toggleWord(word, false)
-        //   }, Math.floor(Math.random() * 2000) + 100);
-        // }, Math.floor((Math.random() * 5000) + 300));
-    }, 1000);
-  }, 1000);
+      }, Math.floor(Math.random() * 1600) + 400);
+  }, Math.floor((Math.random() * 1100) + 900));
 
   function toggleWord(word, setVisible) {
     var visibility = setVisible ? "visible" : "hidden";
-    console.log(visibility);
-    for (var j = 0; j < word.length; j++) {
+    var j = 0;
+    function writeChar() {
       setTimeout(function() {
         switch(word.charAt(j)) {
           case 'l':
@@ -114,8 +111,12 @@ function randomWords() {
           hacek_.style.visibility = visibility;
           break;
         }
-      }, 500);
+        j++;
+        if (j < word.length) {
+          writeChar();
+        }
+      }, 50);
     }
+    writeChar();
   }
-
 }
