@@ -46,7 +46,39 @@
     <title>Let18</title>
   </head>
   <body>
-    <div class="container">
+    <h1 class="text-hide d-none">Letiště festival 2018</h1>
+    <div class="container-fluid d-flex justify-content-between bg-black">
+      <!-- Left Container -->
+      <div class="left-container d-flex flex-column">
+        <a class="d-flex goout-anchor" data-toggle="tooltip" data-placement="right" title="Koupit lístky" target="_blank" href="https://goout.net/cs/listky/letiste-festival-2018/qidc/">
+          <img src="images/social_icons/goout-logo-b.png"
+          alt="Tickets"
+          class="goout pcvisible"
+          id="rotateToggle">
+          <img src="images/mobil/goout-mob.png" alt="Tickets" class="goout mobilvisible" id="rotateToggle"  >
+        </a>
+        <a class="d-flex" data-toggle="tooltip" data-placement="right" title="Uložit do kalendáře" target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&tmeid=NzljY2tyczhzaWlndDNkYzZhZzJzNm9iOWUgYWlyZm9yY2Vwcm9kdWN0aW9uLmN6X2E0ZDNoZWY1ajFxNGowamZzOXN1ZHFydG1nQGc&tmsrc=airforceproduction.cz_a4d3hef5j1q4j0jfs9sudqrtmg%40group.calendar.google.com">
+          <img src="images/social_icons/calendar-logo.png" class="calendar pcvisible" alt="Google Calendar">
+        </a>
+      </div>
+      <!-- Social icons -->
+      <div class="social_icons d-flex flex-column bf-info">
+        <a class="d-flex" href="https://www.facebook.com/letistefest/"  target="_blank">
+          <img src="images/social_icons/facebook-logo-b.png" class="social-icon pcvisible" alt="Facebook">
+          <img src="images/mobil/facebook-mob.png" class="social-icon mobilvisible" alt="Facebook"  >
+        </a>
+        <a  class="d-flex" href="https://www.twitter.com/letistefest/" target="_blank">
+          <img src="images/social_icons/twitter-logo-color.png" class="social-icon pcvisible" alt="Twitter">
+          <img src="images/mobil/twitter-mob.png" class="social-icon mobilvisible" alt="Twitter"  >
+        </a>
+        <a  class="d-flex" href="https://www.instagram.com/letistedisaster/" target="_blank">
+          <img src="images/social_icons/instagram-sketch-alt.png" class="social-icon pcvisible" id="insta" alt="Instagram">
+          <img src="images/mobil/instagram-mob.png" class="social-icon mobilvisible" id="insta" alt="Instagram"  >
+        </a>
+        <a  class="d-flex" title="Google Calendar" target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&tmeid=NzljY2tyczhzaWlndDNkYzZhZzJzNm9iOWUgYWlyZm9yY2Vwcm9kdWN0aW9uLmN6X2E0ZDNoZWY1ajFxNGowamZzOXN1ZHFydG1nQGc&tmsrc=airforceproduction.cz_a4d3hef5j1q4j0jfs9sudqrtmg%40group.calendar.google.com">
+          <img src="images/mobil/calendar-mob.png" class="calendar mobilvisible social-icon" alt="Google Calendar"  >
+        </a>
+      </div>
       <div class="center-box d-flex flex-column justify-content-center align-items-center">
         <!-- Main logo -->
         <div class="col-xs d-flex">
@@ -114,7 +146,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="modalTitle">Modal title</h5>
+              <h5 class="modal-title text-capitalize" id="modalTitle">Modal title</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -135,7 +167,9 @@
     <!-- scripts -->
     <script>
     $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();
+        $('[data-toggle="tooltip"]').tooltip({
+          delay: { "show": 1000, "hide": 100 }
+        });
     });
     </script>
   </body>

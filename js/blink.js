@@ -7,7 +7,7 @@ const words = [
   'Lesť',
   'Lis',
   'Lisť',
-  'Liťé',
+  'Liť',
   'Et',
   'Ti',
   'Tiť',
@@ -18,8 +18,8 @@ const words = [
 ];
 //
 function blinkRandom() {
-  var interval = setInterval("showLetter()", 800);
-  var interval = setInterval("randomWords()", 2000);
+  var interval = setInterval("showLetter()", 600);
+  var interval = setInterval("randomWords()", 3000);
   var interval = setInterval("logoBlink()", 800);
 }
 
@@ -73,7 +73,7 @@ function randomWords() {
       setTimeout(function() {
         toggleWord(word, false)
       }, Math.floor(Math.random() * 1600) + 400);
-  }, Math.floor((Math.random() * 1100) + 900));
+  }, Math.floor((Math.random() * 1600) + 400));
 
   function toggleWord(word, setVisible) {
     var visibility = setVisible ? "visible" : "hidden";
@@ -115,7 +115,7 @@ function randomWords() {
         if (j < word.length) {
           writeChar();
         }
-      }, 50);
+      }, Math.floor(Math.random() * 50) + 10);
     }
     writeChar();
   }

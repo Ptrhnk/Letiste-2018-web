@@ -1,20 +1,13 @@
 // artists declaration
-var artistJazz = ['Jedna', 'dva', 'tri', 'ctyri'];
+var artistJazz = ['Jedna', 'Kaytranada', 'tri', 'ctyri'];
 var artistElectro = ['nekdo'];
 var artistDivadlo = ['nekdo'];
 
 function showGallery(genre) {
-  $('#modalCenter').on('show.bs.modal', function (event) {
-    var button = $(event.relatedTarget); // Button that triggered the modal
-    var genre = button.data('genre'); // Extract info from data-* attributes
-    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-    // Update the modal's content. We'll use jQuery here,
-    // but you could use a data binding library or other methods instead.
-    var modal = $(this)
-    modal.find('.modal-title').text(genre);
-  });
+  var title = document.getElementById('modalTitle');
+  title.innerHTML = genre;
 
-  document.getElementById('back')
+  document.getElementById('back');
   back.classList.add('invisible');
   back.onclick = function() { showGallery(genre) };
   // $("#bfCaptchaEntry").click(function(){ myFunction(); });
@@ -24,7 +17,7 @@ function showGallery(genre) {
   while (modalBody.firstChild) {
       modalBody.removeChild(modalBody.firstChild);
   }
-
+  genre = genre.toLowerCase();
   switch (genre) {
     case 'jazz':
     var artistNames = artistJazz;
@@ -57,6 +50,8 @@ function showGallery(genre) {
 
 function openArtist(genre, artist) {
   // TODO: improve this page!
+  var title = document.getElementById('modalTitle');
+  title.innerHTML = artist;
   var modalBody = document.getElementById('modalBody');
   // clean up
   while (modalBody.firstChild) {
@@ -67,16 +62,20 @@ function openArtist(genre, artist) {
   back.classList.remove('invisible');
     //
   var div = document.createElement('div');
+  div.classList.add('clearfix');
 
   var divImg = document.createElement('div');
   divImg.appendChild(img_create('/artists/' + genre + '/' + artist + '.jpg'), artist, artist);
+  divImg.classList.add('float-left');
+
   var divText = document.createElement('div');
   divText.innerHTML = readTextFile('/artists/' + genre + '/' + artist + '.txt');
+  divText.classList.add('text-justify');
+
   div.appendChild(divImg);
-  div.appendChild(divText);
+  div.innerHTML += readTextFile('/artists/' + genre + '/' + artist + '.txt');
   modalBody.appendChild(div);
 }
-
 
 function img_create(src, alt, title) {
     var img = document.createElement('img');

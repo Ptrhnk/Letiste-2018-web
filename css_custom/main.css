@@ -1,14 +1,57 @@
-body {
+.bg-black {
   background-color: rgb(0, 0, 0);
-}
-.bgColor {
-  background-color: rgb(0, 0, 0);
+  height: 100vh;
 }
 .relative {
   position: relative;
 }
 .absolute {
   position: absolute;
+}
+
+/* Tooltip */
+.tooltip {
+  margin-left: 5px;
+}
+.tooltip-inner {
+  border: 1px solid white;
+  /* text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.7); */
+}
+.arrow {
+  opacity: 0;
+}
+
+/* Social icons */
+.social_icons {
+  margin: 10px 10px 0 0;
+}
+.social-icon {
+  margin-top: 20px;
+  width: 32px;
+  height: 32px;
+}
+#insta {
+  border-radius: 4px;
+}
+.left-container {
+  margin: 35px 0 0 30px;
+  text-align: center;
+  z-index: 1;
+}
+.goout {
+  height: 60px;
+  border-radius: 10px;
+  -webkit-filter: drop-shadow(0px 0px 10px #7cc6ff);
+  filter: drop-shadow(0px 0px 5px #7cc6ff);
+}
+.goout-anchor {
+  margin-bottom: 33px;
+}
+.calendar {
+  height: 40px;
+  transform: translate(27%, 0);
+  -webkit-filter: drop-shadow(0px 0px 3px #7cc6ff);
+  filter: drop-shadow(0px 0px 1.7px #7cc6ff);
 }
 
 /* Main logo */
@@ -19,16 +62,17 @@ body {
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   text-align: center;
-  /* background-color: rgb(66, 95, 252); */
 }
 .logo {
   max-height: 170px;
   margin: 20px;
+  -webkit-filter: drop-shadow(0px 0px 8px rgba(42, 142, 255, 0.7));
+  filter: drop-shadow(0px 0px 3px rgba(42, 142, 255, 0.7));
 }
 
 /* Menu */
 .btns {
-  margin: 40px 0;
+  margin: 40px 0 55px 0;
 }
 .white-button {
   margin: 0 10px;
@@ -42,7 +86,7 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 13px;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 
   transition: all .2s;
@@ -64,25 +108,87 @@ body {
 
 /* Písmena */
 .pismeno {
-  height: 130px;
-  visibility: hidden;
+  height: 120px;
+  /* visibility: hidden; */
 }
 #hacek, #hacek_, #e_, #s_ {
   position: absolute;
 }
-/* #hacek {
+#hacek {
   transform: translate(5%, 0);
   -webkit-transform: translate(5%, 0);
-} */
+}
 .cover {
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
   margin: 20px;
   width: 200px;
   height: 200px;
 }
-.flex-shrink {
-  /* flex: 1 1 auto; */
-  width: 91%;
-  /* flex-shrink: 1; */
-  /* flex-basis: auto; */
+.pcvisible{
+  display: flex !important;
+  visibility: visible;
+ }
+
+.mobilvisible{
+  display: none !important;
+  visibility: hidden;
+}
+
+@media (max-width: 767px) {
+  /* .social_icons {
+    top: 30px;
+    right: 30px;
+  } */
+  .goout {
+    max-height: 46px;
+    border-radius: 10px;
+    -webkit-filter: drop-shadow(0px 0px 10px #ffffff);
+    filter: drop-shadow(0px 0px 5px #ffffff);
+  }
+  .goout_anchor {
+    margin-top: 15px;
+  }
+  .btns {
+    margin: 20px 0 30px 0;
+  }
+  .logo {
+    /* max-height: 100px; */
+    height: 100px;
+  }
+  #l, #e, #t, #i, #s, #tt, #hacek, #ee, #hacek_ {
+    max-height: 70px;
+    width: auto !important;
+  }
+  /* .pismena {
+    margin-top: 30px;
+    min-width: 450px;
+  } */
+  /* .left-container {
+    top: 13px;
+    left: 28px;
+  } */
+  .white-button {
+    margin: 0 5px;
+    padding: 5px 15px;
+    font-weight: 500;
+    font-size: 12px;
+  }
+  .calendar {
+    margin-top: 6px;
+    max-height: 35px;
+    min-height: 35px;
+    transform: translate(0, 0);
+    filter: drop-shadow(0px 0px 0px #7cc6ff);
+    -webkit-filter: drop-shadow(0px 0px 0px #7cc6ff);
+  }
+
+  .pcvisible{
+    display: none !important;
+    visibility: hidden;
+  }
+
+  .mobilvisible{
+    display: flex !important;
+    visibility: visible;
+  }
 }
