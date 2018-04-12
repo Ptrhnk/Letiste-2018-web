@@ -37,7 +37,7 @@ function showGallery(genre) {
       a.href = 'javascript:;';
       a.id = j.toString();
       a.onclick = function() { openArtist(genre, artist) };
-      a.appendChild(img_create('/artists/' + genre + '/' + artist + '.jpg'), artist, artist);
+      a.appendChild(createImg('/artists/' + genre + '/' + artist + '.jpg'), artist, artist);
       modalBody.appendChild(a);
       j++;
       if (j < artistNames.length) {
@@ -65,7 +65,7 @@ function openArtist(genre, artist) {
   div.classList.add('clearfix');
 
   var divImg = document.createElement('div');
-  divImg.appendChild(img_create('/artists/' + genre + '/' + artist + '.jpg'), artist, artist);
+  divImg.appendChild(createImg('/artists/' + genre + '/' + artist + '.jpg'), artist, artist);
   divImg.classList.add('float-left');
 
   var divText = document.createElement('div');
@@ -77,13 +77,21 @@ function openArtist(genre, artist) {
   modalBody.appendChild(div);
 }
 
-function img_create(src, alt, title) {
+function createImg(src, alt, title) {
     var img = document.createElement('img');
     img.src = src;
-    img.classList.add('cover');
+    img.classList.add('cover_front');
     if ( alt != null ) img.alt = alt;
     if ( title != null ) img.title = title;
     return img;
+}
+
+function createBackSide(artist) {
+    var back = document.createElement('div');
+    back.classList.add('cover_back');
+    back.classList.add('text-center');
+    back.innerHTML = artist;
+    return back;
 }
 
 function readTextFile(file) {

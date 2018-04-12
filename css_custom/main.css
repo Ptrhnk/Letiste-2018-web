@@ -118,7 +118,7 @@
   transform: translate(5%, 0);
   -webkit-transform: translate(5%, 0);
 }
-.cover {
+.cover_front {
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
   margin: 20px;
   width: 200px;
