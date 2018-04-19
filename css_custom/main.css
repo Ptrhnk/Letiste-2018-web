@@ -22,8 +22,9 @@
 }
 
 /* Social icons */
-.social_icons {
+.social-icons {
   margin: 10px 10px 0 0;
+  z-index: 1;
 }
 .social-icon {
   margin-top: 20px;
@@ -66,13 +67,31 @@
 .logo {
   max-height: 170px;
   margin: 20px;
-  -webkit-filter: drop-shadow(0px 0px 8px rgba(42, 142, 255, 0.7));
-  filter: drop-shadow(0px 0px 3px rgba(42, 142, 255, 0.7));
+  /* -webkit-filter: drop-shadow(0px 0px 8px rgba(42, 142, 255, 0.7));
+  filter: drop-shadow(0px 0px 3px rgba(42, 142, 255, 0.7)); */
+
+  animation: logoIntro 2s ease-in-out;
+}
+@keyframes logoIntro {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  80% {
+    transform: scale(1);
+  }
 }
 
 /* Menu */
 .btns {
-  margin: 40px 0 55px 0;
+  margin: 40px 0 46px 0;
 }
 .white-button {
   margin: 0 10px;
@@ -90,6 +109,78 @@
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 
   transition: all .2s;
+}
+#jazz {
+  animation: jazzIntro 5.5s ease;
+  /* animation-iteration-count: infinite; */
+}
+#elektronika {
+  animation: elektroIntro 5s ease;
+  /* animation-iteration-count: infinite; */
+}
+#divadlo {
+  animation: divIntro 6s ease;
+  /* animation-iteration-count: infinite; */
+}
+@keyframes jazzIntro {
+  0% {
+    /* opacity: 0; */
+    transform: scale(0);
+  }
+  50% {
+    /* opacity: 0; */
+    transform: scale(0);
+    /* transform: translateX(-200px); */
+  }
+  60% {
+    /* opacity: 1; */
+    transform: scale(1.1);
+    /* transform: translateX(15px); */
+  }
+  80% {
+    transform: scale(1);
+    /* transform: translateX(0); */
+  }
+}
+@keyframes elektroIntro {
+  0% {
+    /* opacity: 0; */
+    transform: scale(0);
+  }
+  30% {
+    /* opacity: 0; */
+    /* transform: translateY(150px); */
+    transform: scale(0);
+  }
+  45% {
+    /* opacity: 1; */
+    /* transform: translateY(-10px); */
+    transform: scale(1.1);
+  }
+  60% {
+    /* transform: translateX(0); */
+    transform: scale(1);
+  }
+}
+@keyframes divIntro {
+  0% {
+    /* opacity: 0; */
+    transform: scale(0);
+  }
+  65% {
+    /* opacity: 0; */
+    transform: scale(0);
+    /* transform: translateX(200px); */
+  }
+  75% {
+    /* opacity: 1; */
+    transform: scale(1.1);
+    /* transform: translateX(-15px); */
+  }
+  95% {
+    transform: scale(1);
+    /* transform: translateX(0); */
+  }
 }
 .white-button:link,
 .white-button:visited {
@@ -109,7 +200,7 @@
 /* Písmena */
 .pismeno {
   height: 120px;
-  /* visibility: hidden; */
+  visibility: hidden;
 }
 #hacek, #hacek_, #e_, #s_ {
   position: absolute;
@@ -118,55 +209,61 @@
   transform: translate(5%, 0);
   -webkit-transform: translate(5%, 0);
 }
-.cover_front {
+.cover {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
   margin: 20px;
-  width: 200px;
-  height: 200px;
 }
+  .cover_front {
+    width: 200px;
+    height: 200px;
+  }
+  .cover_back {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+  }
+  .cover-in-text {
+    width: 200px;
+    height: 200px;
+    margin: 5px 20px 5px 5px;
+  }
+
 .pcvisible{
   display: flex !important;
   visibility: visible;
  }
-
 .mobilvisible{
   display: none !important;
   visibility: hidden;
 }
 
 @media (max-width: 767px) {
-  /* .social_icons {
-    top: 30px;
-    right: 30px;
-  } */
+  .left-container {
+    margin: 30px 0 0 10px;
+  }
   .goout {
     max-height: 46px;
     border-radius: 10px;
     -webkit-filter: drop-shadow(0px 0px 10px #ffffff);
     filter: drop-shadow(0px 0px 5px #ffffff);
+
   }
-  .goout_anchor {
-    margin-top: 15px;
+  .center-box {
+    top: 62%;
   }
   .btns {
-    margin: 20px 0 30px 0;
+    margin: 20px 0 34px 0;
   }
   .logo {
-    /* max-height: 100px; */
     height: 100px;
   }
   #l, #e, #t, #i, #s, #tt, #hacek, #ee, #hacek_ {
     max-height: 70px;
     width: auto !important;
   }
-  /* .pismena {
-    margin-top: 30px;
-    min-width: 450px;
-  } */
-  /* .left-container {
-    top: 13px;
-    left: 28px;
-  } */
   .white-button {
     margin: 0 5px;
     padding: 5px 15px;
@@ -174,7 +271,7 @@
     font-size: 12px;
   }
   .calendar {
-    margin-top: 6px;
+    margin-top: 22px;
     max-height: 35px;
     min-height: 35px;
     transform: translate(0, 0);
@@ -186,7 +283,6 @@
     display: none !important;
     visibility: hidden;
   }
-
   .mobilvisible{
     display: flex !important;
     visibility: visible;

@@ -18,9 +18,11 @@ const words = [
 ];
 //
 function blinkRandom() {
-  var interval = setInterval("showLetter()", 600);
-  var interval = setInterval("randomWords()", 3000);
-  var interval = setInterval("logoBlink()", 800);
+  setTimeout(() => {
+    var interval = setInterval("showLetter()", 600);
+    var interval = setInterval("randomWords()", 3000);
+    var interval = setInterval("logoBlink()", 800);
+  }, 10000);
 }
 
 function showLetter() {

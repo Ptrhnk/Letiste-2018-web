@@ -34,17 +34,19 @@ function showGallery(genre) {
   function createArtist() {
       var artist = artistNames[j];
       var a = document.createElement('a');
+      a.classList.add('cover');
       a.href = 'javascript:;';
       a.id = j.toString();
       a.onclick = function() { openArtist(genre, artist) };
-      a.appendChild(createImg('/artists/' + genre + '/' + artist + '.jpg'), artist, artist);
+      var img = createImg(genre, artist);
+      img.classList.add('cover_front');
+      a.appendChild(img);
       modalBody.appendChild(a);
       j++;
       if (j < artistNames.length) {
         createArtist();
       }
     }
-
     createArtist();
 }
 
@@ -64,25 +66,21 @@ function openArtist(genre, artist) {
   var div = document.createElement('div');
   div.classList.add('clearfix');
 
-  var divImg = document.createElement('div');
-  divImg.appendChild(createImg('/artists/' + genre + '/' + artist + '.jpg'), artist, artist);
-  divImg.classList.add('float-left');
+  var img = createImg(genre, artist);
+  img.classList.add('cover-in-text');
+  img.classList.add('float-left');
 
-  var divText = document.createElement('div');
-  divText.innerHTML = readTextFile('/artists/' + genre + '/' + artist + '.txt');
-  divText.classList.add('text-justify');
-
-  div.appendChild(divImg);
+  div.appendChild(img);
   div.innerHTML += readTextFile('/artists/' + genre + '/' + artist + '.txt');
   modalBody.appendChild(div);
 }
 
-function createImg(src, alt, title) {
+function createImg(genre, artist) {
     var img = document.createElement('img');
-    img.src = src;
-    img.classList.add('cover_front');
-    if ( alt != null ) img.alt = alt;
-    if ( title != null ) img.title = title;
+    img.src = '/artists/' + genre + '/' + artist + '.jpg';
+    if (artist != null) {
+      img.alt = artist;
+    }
     return img;
 }
 
