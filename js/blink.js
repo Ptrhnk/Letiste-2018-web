@@ -7,7 +7,6 @@ const words = [
   'Lesť',
   'Lis',
   'Lisť',
-  'Liť',
   'Et',
   'Ti',
   'Tiť',
@@ -16,13 +15,76 @@ const words = [
   'Iť',
   'ťě',
 ];
+// Start the script
+window.onload = (() => {
+  setTimeout("introAnimation()", 1000);
+  setTimeout("showLetiste()", 4000);
+  setTimeout("blinkRandom()", 6000);
+})
+//
+function introAnimation() {
+  let btnsArr = new Array();
+  let btns = document.getElementsByClassName("white-button");
+  [].forEach.call(btns, function (btn) {btnsArr.push(btn)});
+  let j = 0;
+  function startAnimation() {
+    setTimeout(() => {
+    btnsArr[j].classList.add("intro-btn-animation");
+    btnsArr[j].classList.remove("invisible");
+    j++;
+      if (j < btnsArr.length) {
+        startAnimation();
+      }
+    }, 700);
+  }
+  startAnimation();
+}
+function showLetiste() {
+  l = document.getElementById("l");
+  e = document.getElementById("e");
+  t = document.getElementById("t");
+  i = document.getElementById("i");
+  s = document.getElementById("s");
+  hacek = document.getElementById("hacek");
+  tt = document.getElementById("tt");
+  ee = document.getElementById("ee");
+  hacek_ = document.getElementById("hacek_");
+
+  let charArr = [l, e, t, i, s, hacek, tt, ee, hacek_];
+  let charArrCopy = charArr.slice();
+
+  function startShow(visibility) {
+    let letter = charArr.pop();
+    setTimeout(() => {
+      letter.style.visibility = visibility;
+      if (charArr.length > 0) {
+        startShow(visibility);
+      }
+    }, Math.floor(Math.random() * 150) + 50);
+  }
+  setTimeout(function() {
+    startShow("visible");
+      setTimeout(function() {
+        charArr = charArrCopy.slice();
+        startShow("hidden");
+      }, 3000);
+  }, 100);
+}
 //
 function blinkRandom() {
-  setTimeout(() => {
-    var interval = setInterval("showLetter()", 600);
-    var interval = setInterval("randomWords()", 3000);
-    var interval = setInterval("logoBlink()", 800);
-  }, 10000);
+  let btns = document.getElementsByClassName("white-button");
+  // for (let i = 0; i < btns.length; i++) {
+  //   btns[j].classList.remove("intro-btn-animation");
+  //   btns[j].classList.add("btn-loop");
+  // }
+  let logo = document.getElementById("logo");
+  logo.classList.add("logo-shadow");
+  let btnElectro = document.getElementById("elektronika");
+  btnElectro.classList.add("btn-loop");
+
+  let showLetterInterval = setInterval("showLetter()", 700);
+  let randomWordsInterval = setInterval("randomWords()", 3000);
+  let logoBlinkInterval = setInterval("logoBlink()", 800);
 }
 
 function showLetter() {
@@ -36,8 +98,8 @@ function showLetter() {
   ee = document.getElementById("ee");
   hacek_ = document.getElementById("hacek_");
 
-  var charArr = [l, e, t, i, s, hacek, tt, ee, hacek_];
-  var letter = charArr[Math.floor(Math.random() * charArr.length)];
+  let charArr = [l, e, t, i, s, hacek, tt, ee, hacek_];
+  let letter = charArr[Math.floor(Math.random() * charArr.length)];
 
   setTimeout(function() {
     letter.style.visibility = "visible";
@@ -48,7 +110,7 @@ function showLetter() {
 }
 
 function logoBlink() {
-  var logo = document.getElementById("logo");
+  let logo = document.getElementById("logo");
   setTimeout(function() {
     logo.style.visibility = "hidden";
       setTimeout(function() {
@@ -68,7 +130,7 @@ function randomWords() {
   ee = document.getElementById("ee");
   hacek_ = document.getElementById("hacek_");
 
-  var word = words[Math.floor(Math.random() * words.length)].toLowerCase();
+  let word = words[Math.floor(Math.random() * words.length)].toLowerCase();
 
   setTimeout(function() {
     toggleWord(word, true);
@@ -78,8 +140,8 @@ function randomWords() {
   }, Math.floor((Math.random() * 1600) + 400));
 
   function toggleWord(word, setVisible) {
-    var visibility = setVisible ? "visible" : "hidden";
-    var j = 0;
+    let visibility = setVisible ? "visible" : "hidden";
+    let j = 0;
     function writeChar() {
       setTimeout(function() {
         switch(word.charAt(j)) {
