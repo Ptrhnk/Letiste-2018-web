@@ -1,5 +1,5 @@
 // artists declaration
-var artistJazz = ['Jedna', 'Kaytranada', 'tri', 'ctyri'];
+var artistJazz = ['Jedna', 'Kaytranada', 'tri', 'ctyri', 'Jedna', 'Kaytranada', 'tri', 'ctyri'];
 var artistElectro = ['nekdo'];
 var artistDivadlo = ['nekdo'];
 
@@ -59,10 +59,10 @@ function openArtist(genre, artist) {
   while (modalBody.firstChild) {
       modalBody.removeChild(modalBody.firstChild);
   }
-    // add back button
+  // add back button
   var back = document.getElementById('back');
   back.classList.remove('invisible');
-    //
+  //
   var div = document.createElement('div');
   div.classList.add('clearfix');
 
