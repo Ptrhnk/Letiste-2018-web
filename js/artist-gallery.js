@@ -1,5 +1,11 @@
 // artists declaration
-var artistJazz = ['Jedna', 'Kaytranada', 'tri', 'ctyri', 'Jedna', 'Kaytranada', 'tri', 'ctyri'];
+var artistJazz = [
+  'Flying_Lotus', 'Kaytranada', 'Saba', 'Toonorth',
+  'Flying_Lotus', 'Kaytranada', 'Saba', 'Toonorth',
+  'Flying_Lotus', 'Kaytranada', 'Saba', 'Toonorth',
+  'Flying_Lotus', 'Kaytranada', 'Saba', 'Toonorth',
+  'Flying_Lotus', 'Kaytranada', 'Saba', 'Toonorth',
+];
 var artistElectro = ['nekdo'];
 var artistDivadlo = ['nekdo'];
 
@@ -17,6 +23,8 @@ function showGallery(genre) {
   while (modalBody.firstChild) {
       modalBody.removeChild(modalBody.firstChild);
   }
+
+  // dosazení konkrétního žánru do artistNames
   genre = genre.toLowerCase();
   switch (genre) {
     case 'jazz':
@@ -30,6 +38,7 @@ function showGallery(genre) {
     break;
   }
 
+  // self invoking function for creating gallery
   var j = 0;
   function createArtist() {
       var artist = artistNames[j];
@@ -38,10 +47,24 @@ function showGallery(genre) {
       a.href = 'javascript:;';
       a.id = j.toString();
       a.onclick = function() { openArtist(genre, artist) };
+
       var img = createImg(genre, artist);
       img.classList.add('cover_front');
       a.appendChild(img);
+
+      var textContainer = document.createElement('div');
+
+      var text = document.createElement('h6');
+      text.innerHTML = artist;
+      text.classList.add('text-over-image');
+      text.classList.add('invisible');
+      a.onmouseover = function() { text.classList.remove('invisible') }
+      a.onmouseout = function() { text.classList.add('invisible') }
+      textContainer.appendChild(text);
+
+      a.appendChild(textContainer);
       modalBody.appendChild(a);
+
       j++;
       if (j < artistNames.length) {
         createArtist();

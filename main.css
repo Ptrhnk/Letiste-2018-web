@@ -51,8 +51,9 @@
 .calendar {
   height: 40px;
   transform: translate(27%, 0);
-  -webkit-filter: drop-shadow(0px 0px 3px #7cc6ff);
+  -webkit-transform: translate(27%, 0);
   filter: drop-shadow(0px 0px 1.7px #7cc6ff);
+  -webkit-filter: drop-shadow(0px 0px 3px #7cc6ff);
 }
 
 /* Main logo */
@@ -163,7 +164,6 @@
 .white-button:active {
   outline: none;
   border: none;
-  /* transform: scale(0.5); */
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 .white-button:focus {outline:0;}
@@ -184,15 +184,25 @@
   transform: translate(5%, 0);
   -webkit-transform: translate(5%, 0);
 }
+.cover-container {
+  /* background-color: rgb(33, 179, 162); */
+  width: 94%;
+}
 .cover {
   perspective: 150rem;
   -moz-perspective: 150rem;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-  margin: 20px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  margin: 28px;
+
+  transition: all .2s;
+}
+.cover:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0px 20px rgba(0, 0, 0, 0.8);
 }
   .cover_front {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
   }
   .cover_back {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
@@ -204,6 +214,19 @@
     width: 200px;
     height: 200px;
     margin: 5px 20px 5px 5px;
+  }
+  .text-over-image {
+    position: absolute; /* Position the background text */
+    top: 0;
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1; /* Grey text */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    /* padding: 20px; */
+    text-align: center;
+    vertical-align: middle;
+    line-height: 180px;
+    margin: 0;
   }
 
 .pcvisible{
@@ -224,7 +247,6 @@
     border-radius: 10px;
     -webkit-filter: drop-shadow(0px 0px 10px #ffffff);
     filter: drop-shadow(0px 0px 5px #ffffff);
-
   }
   .center-box {
     top: 62%;
