@@ -1,4 +1,4 @@
-// artists declaration
+// -------------------- ARTISTS --------------------
 var artistJazz = [
   'Flying_Lotus', 'Kaytranada', 'Saba', 'Toonorth',
   'Flying_Lotus', 'Kaytranada', 'Saba', 'Toonorth',
@@ -6,12 +6,35 @@ var artistJazz = [
   'Flying_Lotus', 'Kaytranada', 'Saba', 'Toonorth',
   'Flying_Lotus', 'Kaytranada', 'Saba', 'Toonorth',
 ];
-var artistElectro = ['nekdo'];
-var artistDivadlo = ['nekdo'];
-
+var artistElectro = [
+  'Dorian_Concept',
+  'Dorian_Concept',
+  'Dorian_Concept',
+  'Dorian_Concept',
+  'Dorian_Concept',
+  'Dorian_Concept',
+  'Dorian_Concept',
+  'Dorian_Concept',
+  'Dorian_Concept',
+  'Dorian_Concept',
+];
+var artistDivadlo = [
+  'French_Fries',
+  'French_Fries',
+  'French_Fries',
+  'French_Fries',
+  'French_Fries',
+  'French_Fries',
+  'French_Fries',
+  'French_Fries',
+  'French_Fries',
+  'French_Fries',
+  'French_Fries',
+];
+// -------------------------------------------------
 function showGallery(genre) {
-  var title = document.getElementById('modalTitle');
-  title.innerHTML = genre;
+  // var title = document.getElementById('modalTitle');
+  // title.innerHTML = genre;
 
   document.getElementById('back');
   back.classList.add('invisible');
@@ -55,7 +78,7 @@ function showGallery(genre) {
       var textContainer = document.createElement('div');
 
       var text = document.createElement('h6');
-      text.innerHTML = artist;
+      text.innerHTML = artist.replace("_", " ");
       text.classList.add('text-over-image');
       text.classList.add('invisible');
       a.onmouseover = function() { text.classList.remove('invisible') }
@@ -75,8 +98,8 @@ function showGallery(genre) {
 
 function openArtist(genre, artist) {
   // TODO: improve this page!
-  var title = document.getElementById('modalTitle');
-  title.innerHTML = artist;
+  // var title = document.getElementById('modalTitle');
+  // title.innerHTML = artist.replace("_", " ");
   var modalBody = document.getElementById('modalBody');
   // clean up
   while (modalBody.firstChild) {
@@ -90,8 +113,7 @@ function openArtist(genre, artist) {
   div.classList.add('clearfix');
 
   var img = createImg(genre, artist);
-  img.classList.add('cover-in-text');
-  img.classList.add('float-left');
+  img.classList.add('cover-in-text', 'mx-auto', 'd-block', 'rounded-circle', 'img-thumbnail');
 
   div.appendChild(img);
   div.innerHTML += readTextFile('/artists/' + genre + '/' + artist + '.txt');
@@ -109,8 +131,7 @@ function createImg(genre, artist) {
 
 function createBackSide(artist) {
     var back = document.createElement('div');
-    back.classList.add('cover_back');
-    back.classList.add('text-center');
+    back.classList.add('cover_back', 'text-center');
     back.innerHTML = artist;
     return back;
 }

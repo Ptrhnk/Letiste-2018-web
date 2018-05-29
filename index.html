@@ -40,6 +40,8 @@
     <link href="main.css" rel="stylesheet">
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+    <!-- Google material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- scripts -->
     <script src="js/blink.js"></script>
     <script src="js/artist-gallery.js"></script>
@@ -95,7 +97,7 @@
               class="btn white-button invisible"
               onclick="showGallery(this.id)"
               id="jazz">
-              Jazz
+              &nbsp;Jazz&nbsp;
             </button type="button">
             <button type="button"
               data-toggle="modal"
@@ -144,24 +146,27 @@
         </div>
       </div>
       <!-- Modal -->
-      <div class="modal fade" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal fade modal-fixed-footer" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
           <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title text-capitalize" id="modalTitle">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
             <div class="modal-body d-flex justify-content-center">
               <div class="cover-container d-flex flex-row flex-wrap" id="modalBody">
                 ...
               </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary invisible" onclick="" id="back">Zpět</button>
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zavřít</button>
-            </div>
+          </div>
+          <div class="modal-footer d-flex flex-row">
+            <button type="button" class="btn btn-outline-info invisible d-flex justify-content-center" style="width: 50%;" onclick="" id="back">
+              <i class="material-icons" style="font-size: 24px; padding: 5px; font-weight: 500">
+                arrow_back
+              </i>
+            </button>
+            <!-- <button type="button" class="btn " data-dismiss="modal">Zavřít</button> -->
+            <button type="button" class="btn btn-outline-dark d-flex justify-content-center" style="width: 50%;" data-dismiss="modal" aria-label="Close">
+              <i class="material-icons" style="font-size: 24px; padding: 5px; font-weight: 500">
+                close
+              </i>
+            </button>
           </div>
         </div>
       </div>

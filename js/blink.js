@@ -9,10 +9,10 @@ const words = [
   'Lisť',
   'Et',
   'Ti',
-  'Tiť',
+  // 'Tiť',
   'Tišé',
   'Isťě',
-  'Iť',
+  // 'Iť',
   'ťě',
 ];
 // Start the script
@@ -20,11 +20,12 @@ window.onload = (function() {
   setTimeout("introAnimation()", 1000);
   setTimeout("showLetiste()", 4000);
   setTimeout("blinkRandom()", 6000);
+  setTimeout("btnLoop()", 5000);
 });
 //
 function introAnimation() {
-  var btnsArr = new Array();
   var btns = document.getElementsByClassName("white-button");
+  var btnsArr = new Array();
   [].forEach.call(btns, function (btn) {btnsArr.push(btn)});
   var socials = document.getElementsByClassName("social-icon");
   [].forEach.call(socials, function (social) {btnsArr.push(social)});
@@ -42,6 +43,7 @@ function introAnimation() {
   }
   startAnimation();
 }
+
 function showLetiste() {
   l = document.getElementById("l");
   e = document.getElementById("e");
@@ -74,12 +76,24 @@ function showLetiste() {
   }, 100);
 }
 //
+function btnLoop() {
+  var btnsGet = document.getElementsByClassName("white-button");
+  var btns = new Array();
+  [].forEach.call(btnsGet, function (btn) {btns.push(btn)});
+  function startTrip() {
+    var btn = btns.shift();
+    setTimeout(function() {
+      btn.classList.remove("intro-btn-animation")
+      btn.classList.add("btn-loop");
+      if (btns.length > 0) {
+        startTrip();
+      }
+    }, 1000);
+  }
+  startTrip();
+}
+//
 function blinkRandom() {
-  var btns = document.getElementsByClassName("white-button");
-  // for (var i = 0; i < btns.length; i++) {
-  //   btns[j].classList.remove("intro-btn-animation");
-  //   btns[j].classList.add("btn-loop");
-  // }
   var logo = document.getElementById("logo");
   logo.classList.add("logo-shadow");
   var btnElectro = document.getElementById("elektronika");

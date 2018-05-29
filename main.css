@@ -20,6 +20,47 @@
 .arrow {
   opacity: 0;
 }
+/* Modal fixed footer */
+.modal {
+  /* display: none; */
+  /* position: fixed; */
+  /* left: 0; */
+  /* right: 0; */
+  background-color: black;
+  /* padding: 0; */
+  /* max-height: 70%; */
+  /* width: 55%; */
+  /* margin: auto; */
+  /* overflow-y: auto; */
+  /* border-radius: 2px; */
+  /* will-change: top, opacity; */
+}
+.modal .modal-footer {
+  border-radius: 0.3rem;
+  /* padding: 4px 6px; */
+  height: 56px;
+  width: 100%;
+  /* text-align: right; */
+}
+.modal.modal-fixed-footer {
+  padding: 0;
+  height: 100%;
+}
+.modal.modal-fixed-footer .modal-content {
+  position: absolute;
+  height: calc(100% - 56px);
+  max-height: 100%;
+  width: 100%;
+  overflow-y: auto;
+}
+.modal.modal-fixed-footer .modal-footer {
+  /* border-top: 1px solid rgba(0, 0, 0, 0.1); */
+  position: absolute;
+  bottom: 0;
+  pointer-events: auto;
+  /* width: auto; */
+  background-color: rgba(255, 255, 255, 1);
+}
 
 /* Social icons */
 .social-icons {
@@ -100,6 +141,7 @@
   margin: 0 10px;
   padding: 8px 20px;
   border: none;
+  /* border: 2px solid white; */
   border-radius: 100px;
   background-color: white;
   color: black;
@@ -114,17 +156,23 @@
   transition: all .2s;
 }
 .btn-loop {
-  animation: scaleLoop 3s ease-in-out;
+  animation: scaleLoop 6s linear;
   animation-iteration-count: infinite;
 }
 @keyframes scaleLoop {
   0% {
     transform: scale(1);
   }
-  20% {
+  10% {
+    transform: scale(1);
+  }
+  50% {
     transform: scale(1.1);
   }
   60% {
+    transform: scale(1.1);
+  }
+  100% {
     transform: scale(1);
   }
 }
@@ -166,11 +214,11 @@
   border: none;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
-.white-button:focus {outline:0;}
+/* .white-button:focus {outline:0;}
 .white-button:hover {
   transform: scale(1.1);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
+} */
 
 /* Písmena */
 .pismeno {
@@ -217,15 +265,15 @@
   }
   .text-over-image {
     position: absolute; /* Position the background text */
-    top: 0;
-    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Black background with 0.5 opacity */
     color: #f1f1f1; /* Grey text */
     width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    /* padding: 20px; */
+    padding: 20px;
     text-align: center;
     vertical-align: middle;
-    line-height: 180px;
+    /* height: 100%; */
+    /* line-height: 180px; */
     margin: 0;
   }
 
@@ -263,7 +311,7 @@
   }
   .white-button {
     margin: 0 5px;
-    padding: 5px 15px;
+    padding: 10px 15px;
     font-weight: 500;
     font-size: 12px;
   }
