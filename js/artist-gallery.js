@@ -1,37 +1,3 @@
-// -------------------- ARTISTS --------------------
-var artistJazz = [
-  'Flying_Lotus', 'Kaytranada', 'Saba', 'Toonorth',
-  'Flying_Lotus', 'Kaytranada', 'Saba', 'Toonorth',
-  'Flying_Lotus', 'Kaytranada', 'Saba', 'Toonorth',
-  'Flying_Lotus', 'Kaytranada', 'Saba', 'Toonorth',
-  'Flying_Lotus', 'Kaytranada', 'Saba', 'Toonorth',
-];
-var artistElectro = [
-  'Dorian_Concept',
-  'Dorian_Concept',
-  'Dorian_Concept',
-  'Dorian_Concept',
-  'Dorian_Concept',
-  'Dorian_Concept',
-  'Dorian_Concept',
-  'Dorian_Concept',
-  'Dorian_Concept',
-  'Dorian_Concept',
-];
-var artistDivadlo = [
-  'French_Fries',
-  'French_Fries',
-  'French_Fries',
-  'French_Fries',
-  'French_Fries',
-  'French_Fries',
-  'French_Fries',
-  'French_Fries',
-  'French_Fries',
-  'French_Fries',
-  'French_Fries',
-];
-// -------------------------------------------------
 function showGallery(genre) {
   // var title = document.getElementById('modalTitle');
   // title.innerHTML = genre;
@@ -64,36 +30,40 @@ function showGallery(genre) {
   // self invoking function for creating gallery
   var j = 0;
   function createArtist() {
-      var artist = artistNames[j];
-      var a = document.createElement('a');
-      a.classList.add('cover');
-      a.href = 'javascript:;';
-      a.id = j.toString();
-      a.onclick = function() { openArtist(genre, artist) };
+    var artist = artistNames[j];
 
-      var img = createImg(genre, artist);
-      img.classList.add('cover_front');
-      a.appendChild(img);
+    var img = createImg(genre, artist);
+    img.classList.add('card__picture');
 
-      var textContainer = document.createElement('div');
+    var frontSide = document.createElement('div');
+    frontSide.classList.add('card__side', 'card__side--front');
+    frontSide.appendChild(img);
 
-      var text = document.createElement('h6');
-      text.innerHTML = artist.replace("_", " ");
-      text.classList.add('text-over-image');
-      text.classList.add('invisible');
-      a.onmouseover = function() { text.classList.remove('invisible') }
-      a.onmouseout = function() { text.classList.add('invisible') }
-      textContainer.appendChild(text);
+    var text = document.createElement('h6');
+    text.innerHTML = artist.replace("_", " ");
 
-      a.appendChild(textContainer);
-      modalBody.appendChild(a);
+    var backSide = document.createElement('div');
+    backSide.classList.add('card__side', 'card__side--back', 'd-flex', 'align-items-center', 'justify-content-center');
+    backSide.appendChild(text);
 
-      j++;
-      if (j < artistNames.length) {
-        createArtist();
-      }
+    var a = document.createElement('a');
+    a.classList.add('card');
+    a.href = 'javascript:;';
+    a.id = j.toString();
+    a.onclick = function() { openArtist(genre, artist) };
+    a.appendChild(frontSide);
+    a.appendChild(backSide);
+
+    modalBody.appendChild(a);
+    j++;
+    if (j < artistNames.length) {
+      createArtist();
     }
-    createArtist();
+  }
+  createArtist();
+  // scroll to top
+  // var modalContent = document.getElementById('modalContent');
+  // modalContent.scrollTo(0, 0);
 }
 
 function openArtist(genre, artist) {
@@ -118,22 +88,18 @@ function openArtist(genre, artist) {
   div.appendChild(img);
   div.innerHTML += readTextFile('/artists/' + genre + '/' + artist + '.txt');
   modalBody.appendChild(div);
+
+  var modalContent = document.getElementById('modalContent');
+  modalContent.scrollTo(0, 0);
 }
 
 function createImg(genre, artist) {
-    var img = document.createElement('img');
-    img.src = '/artists/' + genre + '/' + artist + '.jpg';
-    if (artist != null) {
-      img.alt = artist;
-    }
-    return img;
-}
-
-function createBackSide(artist) {
-    var back = document.createElement('div');
-    back.classList.add('cover_back', 'text-center');
-    back.innerHTML = artist;
-    return back;
+  var img = document.createElement('img');
+  img.src = '/artists/' + genre + '/' + artist + '.jpg';
+  if (artist != null) {
+    img.alt = artist;
+  }
+  return img;
 }
 
 function readTextFile(file) {

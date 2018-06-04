@@ -45,6 +45,7 @@
     <!-- scripts -->
     <script src="js/blink.js"></script>
     <script src="js/artist-gallery.js"></script>
+    <script src="js/artists.js"></script>
     <title>Let18</title>
   </head>
   <body>
@@ -83,43 +84,44 @@
           <img src="images/mobil/calendar-mob.png" class="calendar social-icon mobilvisible invisible" alt="Google Calendar"  >
         </a>
       </div>
+      <!-- Center block -->
       <div class="center-box d-flex flex-column justify-content-center align-items-center">
         <!-- Main logo -->
         <div class="col-xs d-flex">
           <img class="logo blue-shadow" src="images/logo-w.png" id="logo" alt="logo">
         </div>
-        <!-- Menu -->
+        <!-- Menu btns -->
         <div class="btns d-flex flex-row">
-            <button type="button"
-              data-toggle="modal"
-              data-target="#modalCenter"
-              data-genre="Jazz"
-              class="btn white-button invisible"
-              onclick="showGallery(this.id)"
-              id="jazz">
-              &nbsp;Jazz&nbsp;
-            </button type="button">
-            <button type="button"
-              data-toggle="modal"
-              data-target="#modalCenter"
-              data-genre="Elektronika"
-              class="btn white-button invisible"
-              onclick="showGallery(this.id)"
-              id="elektronika">
-              Elektronika
-            </button type="button">
-            <button type="button"
-              data-toggle="modal"
-              data-target="#modalCenter"
-              data-genre="Divadlo"
-              class="btn white-button invisible"
-              onclick="showGallery(this.id)"
-              id="divadlo">
-              Divadlo
-            </button type="button">
-      </div>
-      <!-- Písmena -->
-      <div class="pismena d-flex flex-row">
+          <button type="button"
+            data-toggle="modal"
+            data-target="#modalCenter"
+            data-genre="Jazz"
+            class="btn white-button invisible"
+            onclick="showGallery(this.id)"
+            id="jazz">
+            &nbsp;Jazz&nbsp;
+          </button type="button">
+          <button type="button"
+            data-toggle="modal"
+            data-target="#modalCenter"
+            data-genre="Elektronika"
+            class="btn white-button invisible"
+            onclick="showGallery(this.id)"
+            id="elektronika">
+            Elektronika
+          </button type="button">
+          <button type="button"
+            data-toggle="modal"
+            data-target="#modalCenter"
+            data-genre="Divadlo"
+            class="btn white-button invisible"
+            onclick="showGallery(this.id)"
+            id="divadlo">
+            Divadlo
+          </button type="button">
+        </div>
+        <!-- Písmena -->
+        <div class="pismena d-flex flex-row">
           <div class="d-flex flex-row flex-nowrap">
             <img class="pismeno" src="images/pismena/l.png" alt="L" id="l">
           </div>
@@ -145,34 +147,36 @@
           </div>
         </div>
       </div>
+
       <!-- Modal -->
       <div class="modal fade modal-fixed-footer" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-body d-flex justify-content-center">
-              <div class="cover-container d-flex flex-row flex-wrap" id="modalBody">
+          <div class="modal-content" id="modalContent">
+            <div class="modal-body d-flex flex-row flex-wrap justify-content-center" id="modalBody">
+              <!-- <div class="artist-gallery-container d-flex flex-wrap justify-content-center"> -->
                 ...
-              </div>
+              <!-- </div> -->
             </div>
-          </div>
-          <div class="modal-footer d-flex flex-row">
-            <button type="button" class="btn btn-outline-info invisible d-flex justify-content-center" style="width: 50%;" onclick="" id="back">
-              <i class="material-icons" style="font-size: 24px; padding: 5px; font-weight: 500">
-                arrow_back
-              </i>
-            </button>
-            <!-- <button type="button" class="btn " data-dismiss="modal">Zavřít</button> -->
-            <button type="button" class="btn btn-outline-dark d-flex justify-content-center" style="width: 50%;" data-dismiss="modal" aria-label="Close">
-              <i class="material-icons" style="font-size: 24px; padding: 5px; font-weight: 500">
-                close
-              </i>
-            </button>
+            <div class="modal-footer d-flex flex-row justify-content-center">
+              <button type="button" class="btn btn-outline-info invisible d-flex justify-content-center" style="width: 50%;" onclick="" id="back">
+                <i class="material-icons" style="font-size: 24px; padding: 5px; font-weight: 500">
+                  arrow_back
+                </i>
+              </button>
+              <button type="button" class="btn btn-outline-dark d-flex justify-content-center" style="width: 50%;" data-dismiss="modal" aria-label="Close">
+                <i class="material-icons" style="font-size: 24px; padding: 5px; font-weight: 500">
+                  close
+                </i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
     <!-- scripts -->
     <script>
+    // bootstrap tooltip
     $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip({
           delay: { "show": 1000, "hide": 100 }
