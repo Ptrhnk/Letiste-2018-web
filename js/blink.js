@@ -16,7 +16,6 @@ const words = [
   'ťě',
 ];
 // Start the script
-<<<<<<< HEAD
 window.onload = (function() {
   setTimeout("introAnimation()", 1000);
   setTimeout("showLetiste()", 4000);
@@ -40,32 +39,13 @@ function introAnimation() {
     btnsArr[j].classList.remove("invisible");
     j++;
       if (j < btnsArr.length) {
-=======
-window.onload = (() => {
-  setTimeout("introAnimation()", 1000);
-  setTimeout("blinkRandom()", 5000);
-})
-//
-function introAnimation() {
-  let btns = document.getElementsByClassName("white-button");
-  let j = 0;
-  function startAnimation() {
-    setTimeout(() => {
-    btns[j].classList.add("intro-btn-animation");
-    btns[j].classList.remove("invisible");
-    j++;
-      if (j < btns.length) {
->>>>>>> e2e2e3f9a9b8604463a80fe7bd76324313f5a704
         startAnimation();
       }
     }, 700);
   }
   startAnimation();
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> e2e2e3f9a9b8604463a80fe7bd76324313f5a704
 function showLetiste() {
   l = document.getElementById("l");
   e = document.getElementById("e");
@@ -77,7 +57,6 @@ function showLetiste() {
   ee = document.getElementById("ee");
   hacek_ = document.getElementById("hacek_");
 
-<<<<<<< HEAD
   var charArr = [l, e, t, i, s, hacek, tt, ee, hacek_];
   var charArrCopy = charArr.slice();
 
@@ -125,26 +104,6 @@ function blinkRandom() {
   var showLetterInterval = setInterval("showLetter()", 700);
   var randomWordsInterval = setInterval("randomWords()", 3000);
   var logoBlinkInterval = setInterval("logoBlink()", 800);
-=======
-  let charArr = [l, e, t, i, s, hacek, tt, ee, hacek_];
-
-}
-//
-function blinkRandom() {
-  let btns = document.getElementsByClassName("white-button");
-  // for (let i = 0; i < btns.length; i++) {
-  //   btns[j].classList.remove("intro-btn-animation");
-  //   btns[j].classList.add("btn-loop");
-  // }
-  let logo = document.getElementById("logo");
-  logo.classList.add("logo-shadow");
-  let btnElectro = document.getElementById("elektronika");
-  btnElectro.classList.add("btn-loop");
-
-  let showLetterInterval = setInterval("showLetter()", 600);
-  let randomWordsInterval = setInterval("randomWords()", 3000);
-  let logoBlinkInterval = setInterval("logoBlink()", 800);
->>>>>>> e2e2e3f9a9b8604463a80fe7bd76324313f5a704
 }
 
 function showLetter() {
@@ -158,8 +117,8 @@ function showLetter() {
   ee = document.getElementById("ee");
   hacek_ = document.getElementById("hacek_");
 
-  let charArr = [l, e, t, i, s, hacek, tt, ee, hacek_];
-  let letter = charArr[Math.floor(Math.random() * charArr.length)];
+  var charArr = [l, e, t, i, s, hacek, tt, ee, hacek_];
+  var letter = charArr[Math.floor(Math.random() * charArr.length)];
 
   setTimeout(function() {
     letter.style.visibility = "visible";
@@ -170,7 +129,7 @@ function showLetter() {
 }
 
 function logoBlink() {
-  let logo = document.getElementById("logo");
+  var logo = document.getElementById("logo");
   setTimeout(function() {
     logo.style.visibility = "hidden";
       setTimeout(function() {
@@ -190,7 +149,7 @@ function randomWords() {
   ee = document.getElementById("ee");
   hacek_ = document.getElementById("hacek_");
 
-  let word = words[Math.floor(Math.random() * words.length)].toLowerCase();
+  var word = words[Math.floor(Math.random() * words.length)].toLowerCase();
 
   setTimeout(function() {
     toggleWord(word, true);
@@ -200,8 +159,8 @@ function randomWords() {
   }, Math.floor((Math.random() * 1600) + 400));
 
   function toggleWord(word, setVisible) {
-    let visibility = setVisible ? "visible" : "hidden";
-    let j = 0;
+    var visibility = setVisible ? "visible" : "hidden";
+    var j = 0;
     function writeChar() {
       setTimeout(function() {
         switch(word.charAt(j)) {
