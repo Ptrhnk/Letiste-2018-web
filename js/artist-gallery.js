@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+// artists declaration
+var artistJazz = ['Jedna', 'Kaytranada', 'tri', 'ctyri', 'Jedna', 'Kaytranada', 'tri', 'ctyri'];
+var artistElectro = ['nekdo'];
+var artistDivadlo = ['nekdo'];
+
+>>>>>>> e2e2e3f9a9b8604463a80fe7bd76324313f5a704
 function showGallery(genre) {
   // var title = document.getElementById('modalTitle');
   // title.innerHTML = genre;
