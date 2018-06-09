@@ -32,15 +32,16 @@ function showGallery(genre) {
   function createArtist() {
     var artist = artistNames[j];
 
+    var text = document.createElement('h6');
+    text.innerHTML = artist.replace("_", " ");
+
     var img = createImg(genre, artist);
     img.classList.add('card__picture');
 
     var frontSide = document.createElement('div');
     frontSide.classList.add('card__side', 'card__side--front');
     frontSide.appendChild(img);
-
-    var text = document.createElement('h6');
-    text.innerHTML = artist.replace("_", " ");
+    frontSide.appendChild(text);
 
     var backSide = document.createElement('div');
     backSide.classList.add('card__side', 'card__side--back', 'd-flex', 'align-items-center', 'justify-content-center');
@@ -63,7 +64,7 @@ function showGallery(genre) {
   createArtist();
   // scroll to top
   // var modalContent = document.getElementById('modalContent');
-  // modalContent.scrollTo(0, 0);
+  modalBody.scrollTo(0, 0);
 }
 
 function openArtist(genre, artist) {
@@ -90,7 +91,7 @@ function openArtist(genre, artist) {
   modalBody.appendChild(div);
 
   var modalContent = document.getElementById('modalContent');
-  modalContent.scrollTo(0, 0);
+  modalBody.scrollTo(0, 0);
 }
 
 function createImg(genre, artist) {

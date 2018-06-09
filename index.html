@@ -32,6 +32,7 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#826c6c">
     <!-- Bootstr4p and jQuery -->
+    <!-- <link rel="stylesheet" href="bootstrap/bootstrap-customized.css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -67,22 +68,50 @@
         </a>
       </div>
       <!-- Social icons -->
-      <div class="social-icons d-flex flex-column bf-info">
+      <!-- <div class="btn-group dropleft">
+      </div> -->
+      <div class="social-icons d-flex flex-column pcvisible">
         <a class="d-flex" href="https://www.facebook.com/letistedisaster/" target="_blank">
-          <img src="images/social_icons/facebook-logo-b.png" class="social-icon pcvisible invisible" alt="Facebook">
-          <img src="images/mobil/facebook-mob.png" class="social-icon mobilvisible invisible" alt="Facebook"  >
+          <img src="images/social_icons/facebook-logo-b.png" class="social-icon pcvisible" alt="Facebook">
+          <img src="images/mobil/facebook-mob.png" class="social-icon mobilvisible" alt="Facebook"  >
         </a>
         <a  class="d-flex" href="https://www.twitter.com/letistefest/" target="_blank">
-          <img src="images/social_icons/twitter-logo-color.png" class="social-icon pcvisible invisible" alt="Twitter">
-          <img src="images/mobil/twitter-mob.png" class="social-icon mobilvisible invisible" alt="Twitter"  >
+          <img src="images/social_icons/twitter-logo-color.png" class="social-icon pcvisible" alt="Twitter">
+          <img src="images/mobil/twitter-mob.png" class="social-icon mobilvisible" alt="Twitter"  >
         </a>
         <a  class="d-flex" href="https://www.instagram.com/letistedisaster/" target="_blank">
-          <img src="images/social_icons/instagram-sketch-alt.png" class="social-icon pcvisible invisible" id="insta" alt="Instagram">
-          <img src="images/mobil/instagram-mob.png" class="social-icon mobilvisible invisible" id="insta" alt="Instagram"  >
+          <img src="images/social_icons/instagram-sketch-alt.png" class="social-icon pcvisible" id="insta" alt="Instagram">
+          <img src="images/mobil/instagram-mob.png" class="social-icon mobilvisible" id="insta" alt="Instagram"  >
         </a>
         <a  class="d-flex" title="Google Calendar" target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&tmeid=NzljY2tyczhzaWlndDNkYzZhZzJzNm9iOWUgYWlyZm9yY2Vwcm9kdWN0aW9uLmN6X2E0ZDNoZWY1ajFxNGowamZzOXN1ZHFydG1nQGc&tmsrc=airforceproduction.cz_a4d3hef5j1q4j0jfs9sudqrtmg%40group.calendar.google.com">
-          <img src="images/mobil/calendar-mob.png" class="calendar social-icon mobilvisible invisible" alt="Google Calendar"  >
+          <img src="images/mobil/calendar-mob.png" class="calendar social-icon mobilvisible" alt="Google Calendar"  >
         </a>
+      </div>
+        <div class="dropdown mobilvisible">
+        <button class="btn menu-button invisible" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="material-icons">
+            menu
+          </i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+          <div class="d-flex flex-column">
+            <a class="d-flex" href="https://www.facebook.com/letistedisaster/" target="_blank">
+              <img src="images/social_icons/facebook-logo-b.png" class="social-icon pcvisible" alt="Facebook">
+              <img src="images/mobil/facebook-mob.png" class="social-icon mobilvisible" alt="Facebook"  >
+            </a>
+            <a  class="d-flex" href="https://www.twitter.com/letistefest/" target="_blank">
+              <img src="images/social_icons/twitter-logo-color.png" class="social-icon pcvisible" alt="Twitter">
+              <img src="images/mobil/twitter-mob.png" class="social-icon mobilvisible" alt="Twitter"  >
+            </a>
+            <a  class="d-flex" href="https://www.instagram.com/letistedisaster/" target="_blank">
+              <img src="images/social_icons/instagram-sketch-alt.png" class="social-icon pcvisible" id="insta" alt="Instagram">
+              <img src="images/mobil/instagram-mob.png" class="social-icon mobilvisible" id="insta" alt="Instagram"  >
+            </a>
+            <a  class="d-flex" title="Google Calendar" target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&tmeid=NzljY2tyczhzaWlndDNkYzZhZzJzNm9iOWUgYWlyZm9yY2Vwcm9kdWN0aW9uLmN6X2E0ZDNoZWY1ajFxNGowamZzOXN1ZHFydG1nQGc&tmsrc=airforceproduction.cz_a4d3hef5j1q4j0jfs9sudqrtmg%40group.calendar.google.com">
+              <img src="images/mobil/calendar-mob.png" class="calendar social-icon mobilvisible" alt="Google Calendar"  >
+            </a>
+          </div>
+        </div>
       </div>
       <!-- Center block -->
       <div class="center-box d-flex flex-column justify-content-center align-items-center">
@@ -153,18 +182,16 @@
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
           <div class="modal-content" id="modalContent">
             <div class="modal-body d-flex flex-row flex-wrap justify-content-center" id="modalBody">
-              <!-- <div class="artist-gallery-container d-flex flex-wrap justify-content-center"> -->
                 ...
-              <!-- </div> -->
             </div>
-            <div class="modal-footer d-flex flex-row justify-content-center">
-              <button type="button" class="btn btn-outline-info invisible d-flex justify-content-center" style="width: 50%;" onclick="" id="back">
-                <i class="material-icons" style="font-size: 24px; padding: 5px; font-weight: 500">
+            <div class="modal-footer d-flex flex-row justify-content-around">
+              <button type="button" class="btn white-button invisible" style="width: 35%" onclick="" id="back">
+                <i class="material-icons d-inline-block" style="font-size: 24px; font-weight: 500">
                   arrow_back
                 </i>
               </button>
-              <button type="button" class="btn btn-outline-dark d-flex justify-content-center" style="width: 50%;" data-dismiss="modal" aria-label="Close">
-                <i class="material-icons" style="font-size: 24px; padding: 5px; font-weight: 500">
+              <button type="button" class="btn white-button" style="width: 35%" data-dismiss="modal" aria-label="Close">
+                <i class="material-icons d-inline-block" style="font-size: 24px; font-weight: 500;">
                   close
                 </i>
               </button>

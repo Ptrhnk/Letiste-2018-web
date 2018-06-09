@@ -24,11 +24,13 @@ window.onload = (function() {
 });
 //
 function introAnimation() {
-  var btns = document.getElementsByClassName("white-button");
   var btnsArr = new Array();
+  var btns = document.getElementsByClassName("white-button");
   [].forEach.call(btns, function (btn) {btnsArr.push(btn)});
-  var socials = document.getElementsByClassName("social-icon");
-  [].forEach.call(socials, function (social) {btnsArr.push(social)});
+  var menuBtn = document.getElementsByClassName("menu-button");
+  [].forEach.call(menuBtn, function (menu) {btnsArr.push(menu)});
+  // var socials = document.getElementsByClassName("social-icon");
+  // [].forEach.call(socials, function (social) {btnsArr.push(social)});
 
   var j = 0;
   function startAnimation() {
