@@ -12,40 +12,30 @@ function showGallery(genre) {
   while (modalBody.firstChild) {
       modalBody.removeChild(modalBody.firstChild);
   }
-
   // dosazení konkrétního žánru do artistNames
   genre = genre.toLowerCase();
-  switch (genre) {
-    case 'jazz':
-    var artistNames = artistJazz;
-    break;
-    case 'elektronika':
-    var artistNames = artistElectro;
-    break;
-    case 'divadlo':
-    var artistNames = artistDivadlo;
-    break;
-  }
 
   // self invoking function for creating gallery
   var j = 0;
   function createArtist() {
-    var artist = artistNames[j];
+    var artist = artists[genre][j];
+    var artistName = artists[genre][j].name;
 
-    var text = document.createElement('h6');
-    text.innerHTML = artist.replace("_", " ");
-
-    var img = createImg(genre, artist);
+    var textFront = document.createElement('h5');
+    textFront.classList.add('card-text', 'mobilvisible');
+    textFront.innerHTML = artistName.replace("_", " ");
+    var img = createImg(genre, artistName);
     img.classList.add('card__picture');
-
     var frontSide = document.createElement('div');
     frontSide.classList.add('card__side', 'card__side--front');
     frontSide.appendChild(img);
-    frontSide.appendChild(text);
+    frontSide.appendChild(textFront);
 
+    var textBack = document.createElement('h6');
+    textBack.innerHTML = artistName.replace("_", " ");
     var backSide = document.createElement('div');
     backSide.classList.add('card__side', 'card__side--back', 'd-flex', 'align-items-center', 'justify-content-center');
-    backSide.appendChild(text);
+    backSide.appendChild(textBack);
 
     var a = document.createElement('a');
     a.classList.add('card');
@@ -57,20 +47,19 @@ function showGallery(genre) {
 
     modalBody.appendChild(a);
     j++;
-    if (j < artistNames.length) {
+    if (j < artists[genre].length) {
       createArtist();
     }
   }
   createArtist();
-  // scroll to top
-  // var modalContent = document.getElementById('modalContent');
+
   modalBody.scrollTo(0, 0);
 }
 
 function openArtist(genre, artist) {
-  // TODO: improve this page!
-  // var title = document.getElementById('modalTitle');
-  // title.innerHTML = artist.replace("_", " ");
+  console.log(artist.sc);
+  console.log(artist.yt);
+  var artistName = artist.name;
   var modalBody = document.getElementById('modalBody');
   // clean up
   while (modalBody.firstChild) {
@@ -83,11 +72,15 @@ function openArtist(genre, artist) {
   var div = document.createElement('div');
   div.classList.add('clearfix');
 
-  var img = createImg(genre, artist);
+  var img = createImg(genre, artistName);
   img.classList.add('cover-in-text', 'mx-auto', 'd-block', 'rounded-circle', 'img-thumbnail');
 
   div.appendChild(img);
-  div.innerHTML += readTextFile('/artists/' + genre + '/' + artist + '.txt');
+
+  // console.log(artists[artist]);
+  // alert(artists.artist.sc);
+
+  div.innerHTML += readTextFile('/artists/' + genre + '/' + artistName + '.txt');
   modalBody.appendChild(div);
 
   var modalContent = document.getElementById('modalContent');

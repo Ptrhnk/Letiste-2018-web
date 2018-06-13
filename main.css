@@ -95,13 +95,12 @@ button i {
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
     .card__side--front {
       color: white;
+      /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
       text-align: center;
+      vertical-align: middle;
       font-size: 16px;
       /* background-image: linear-gradient(to right bottom, #2998ff, #5643fa);  */
       /* z-index: 50; */
-    }
-    .card__side--front h6 {
-      z-index: 999;
     }
     .card__picture { height: 100%; }
     .card__side--back {
@@ -115,7 +114,12 @@ button i {
         transform: rotateY(-180deg); }
       .card:hover .card__side--back {
         transform: rotateY(0); }
-
+    .card-text {
+      position: absolute;
+      top: 75%;
+      left: 15%;
+      /* transform: translate(-50%, -50%); */
+    }
 /* Social icons */
 .dropdown-menu {
   background-color: rgba(0, 0, 0, 0);
