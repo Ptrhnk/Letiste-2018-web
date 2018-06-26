@@ -4,6 +4,8 @@ function showGallery(genre) {
 
   document.getElementById('back');
   back.classList.add('invisible');
+  // back.classList.remove('d-flex');
+  // back.classList.add('d-none');
   back.onclick = function() { showGallery(genre) };
   // $("#bfCaptchaEntry").click(function(){ myFunction(); });
 
@@ -21,7 +23,7 @@ function showGallery(genre) {
     var artist = artists[genre][j];
     var artistName = artists[genre][j].name;
 
-    var textFront = document.createElement('h5');
+    var textFront = document.createElement('h6');
     textFront.classList.add('card-text', 'mobilvisible');
     textFront.innerHTML = artistName.replace("_", " ");
     var img = createImg(genre, artistName);
@@ -29,7 +31,7 @@ function showGallery(genre) {
     var frontSide = document.createElement('div');
     frontSide.classList.add('card__side', 'card__side--front');
     frontSide.appendChild(img);
-    frontSide.appendChild(textFront);
+    // frontSide.appendChild(textFront);
 
     var textBack = document.createElement('h6');
     textBack.innerHTML = artistName.replace("_", " ");
@@ -53,6 +55,8 @@ function showGallery(genre) {
   }
   createArtist();
 
+  
+
   modalBody.scrollTo(0, 0);
 }
 
@@ -68,19 +72,27 @@ function openArtist(genre, artist) {
   // add back button
   var back = document.getElementById('back');
   back.classList.remove('invisible');
+  // back.classList.remove('d-none');
+  // back.classList.add('d-flex');
   //
   var div = document.createElement('div');
-  div.classList.add('clearfix');
+  div.classList.add('clearfix', 'artist-gallery-container');
 
   var img = createImg(genre, artistName);
   img.classList.add('cover-in-text', 'mx-auto', 'd-block', 'rounded-circle', 'img-thumbnail');
-
   div.appendChild(img);
 
+  var artistTitle = document.createElement('h3');
+  artistTitle.classList.add('text-center', 'artist-title');
+  artistTitle.innerHTML = artistName.replace("_", " ");
+  div.appendChild(artistTitle);
   // console.log(artists[artist]);
   // alert(artists.artist.sc);
 
-  div.innerHTML += readTextFile('/artists/' + genre + '/' + artistName + '.txt');
+  var p = document.createElement('p');
+  p.classList.add('text-center');
+  p.innerHTML += readTextFile('/artists/' + genre + '/' + artistName + '.txt');
+  div.appendChild(p);
   modalBody.appendChild(div);
 
   var modalContent = document.getElementById('modalContent');

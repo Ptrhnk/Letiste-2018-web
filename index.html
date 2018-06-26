@@ -181,17 +181,17 @@
       <div class="modal fade modal-fixed-footer" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
           <div class="modal-content" id="modalContent">
-            <div class="modal-body d-flex flex-row flex-wrap justify-content-center" id="modalBody">
+            <div class="modal-body d-flex flex-fix flex-row flex-wrap justify-content-center" id="modalBody">
                 ...
             </div>
-            <div class="modal-footer d-flex flex-row justify-content-around">
-              <button type="button" class="btn white-button invisible" style="width: 35%" onclick="" id="back">
-                <i class="material-icons d-inline-block" style="font-size: 24px; font-weight: 500">
+            <div class="modal-footer d-flex flex-fix flex-row justify-content-around">
+              <button type="button" class="btn modal-button d-none justify-content-center invisible" style="width: 30%" onclick="" id="back">
+                <i class="material-icons modal-icon d-flex justify-content-center">
                   arrow_back
                 </i>
               </button>
-              <button type="button" class="btn white-button" style="width: 35%" data-dismiss="modal" aria-label="Close">
-                <i class="material-icons d-inline-block" style="font-size: 24px; font-weight: 500;">
+              <button type="button" class="btn modal-button d-flex justify-content-center" style="width: 30%" data-dismiss="modal" aria-label="Close">
+                <i class="material-icons modal-icon d-flex justify-content-center ">
                   close
                 </i>
               </button>
@@ -206,7 +206,7 @@
     // bootstrap tooltip
     $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip({
-          delay: { "show": 1000, "hide": 100 }
+          delay: { "show": 400, "hide": 100 }
         });
     });
     </script>

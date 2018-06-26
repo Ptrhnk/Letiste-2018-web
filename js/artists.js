@@ -16,6 +16,22 @@ artists = {
     },
     {
       name: "Toonorth",
+    },
+    {
+      name: "Flying_Lotus",
+      sc: "https://soundcloud.com/kaytranada",
+      yt: "https://youtu.be/yaWesK-nWts",
+    },
+    {
+      name: "Kaytranada",
+      sc: "https://soundcloud.com/kaytranada",
+      yt: "https://youtu.be/yaWesK-nWts",
+    },
+    {
+      name: "Saba",
+    },
+    {
+      name: "Toonorth",
     }
   ],
   elektronika: [

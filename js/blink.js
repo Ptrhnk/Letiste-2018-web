@@ -1,6 +1,6 @@
 var l, e, t, i, s, hacek, tt, ee, hacek_, logo, pismena;
 const words = [
-  'Letišťě',
+  // 'Letišťě',
   'Let',
   'Letiš',
   'Les',
@@ -9,10 +9,8 @@ const words = [
   'Lisť',
   'Et',
   'Ti',
-  // 'Tiť',
   'Tišé',
-  'Isťě',
-  // 'Iť',
+  // 'Isťě',
   'ťě',
 ];
 // Start the script
@@ -79,6 +77,12 @@ function showLetiste() {
 }
 //
 function btnLoop() {
+  var modalBtnsGet = document.getElementsByClassName("modal-button");
+  var modalBtns = new Array();
+  [].forEach.call(modalBtnsGet, function (btn) {modalBtns.push(btn)});
+  modalBtns[0].classList.add("btn-loop");
+  modalBtns[1].classList.add("btn-loop");
+  
   var btnsGet = document.getElementsByClassName("white-button");
   var btns = new Array();
   [].forEach.call(btnsGet, function (btn) {btns.push(btn)});
@@ -104,6 +108,7 @@ function blinkRandom() {
   var showLetterInterval = setInterval("showLetter()", 700);
   var randomWordsInterval = setInterval("randomWords()", 3000);
   var logoBlinkInterval = setInterval("logoBlink()", 800);
+  var letisteInterval = setInterval("letiste()", 10000);
 }
 
 function showLetter() {
@@ -202,4 +207,68 @@ function randomWords() {
     }
     writeChar();
   }
+}
+
+function letiste() {
+  l = document.getElementById("l");
+  e = document.getElementById("e");
+  t = document.getElementById("t");
+  i = document.getElementById("i");
+  s = document.getElementById("s");
+  hacek = document.getElementById("hacek");
+  tt = document.getElementById("tt");
+  ee = document.getElementById("ee");
+  hacek_ = document.getElementById("hacek_");
+
+  function shuffle(a) {
+    for (var i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+  var visibility = "visible";
+  var letiste = "Letišťě".split("");
+  var randomLetiste = shuffle(letiste);
+  var j = 0;
+  function writeChar() {
+    setTimeout(function() {
+      switch(randomLetiste[j]) {
+        case 'l':
+        l.style.visibility = visibility;
+        break;
+        case 'e':
+        e.style.visibility = visibility;
+        break;
+        case 't':
+        t.style.visibility = visibility;
+        break;
+        case 'i':
+        i.style.visibility = visibility;
+        break;
+        case 's':
+        s.style.visibility = visibility;
+        break;
+        case 'š':
+        hacek.style.visibility = visibility;
+        s.style.visibility = visibility;
+        break;
+        case 'ť':
+        tt.style.visibility = visibility;
+        break;
+        case 'é':
+        ee.style.visibility = visibility;
+        break;
+        case 'ě':
+        ee.style.visibility = visibility;
+        hacek_.style.visibility = visibility;
+        break;
+      }
+      j++;
+      if (j < randomLetiste.length) {
+        writeChar();
+      }
+    }, Math.floor(Math.random() * 50) + 10);
+  }
+  writeChar();
 }

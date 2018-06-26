@@ -36,6 +36,10 @@ button i {
 }
 .modal.modal-fixed-footer .modal-content {
   position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+  -o-transform: translate(0%, -50%);
+  -webkit-transform: translate(0%, -50%);
   max-height: 100%;
   border-radius: none;
   background-color: black;
@@ -43,13 +47,26 @@ button i {
   /* width: 100%; */
 }
 .modal.modal-fixed-footer .modal-body {
-  /* height: calc(100% - (56px)); */
   margin-bottom: 58px;
   padding-top: 0;
   border-radius: 0.3rem;
-  background-color: white;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
   overflow-y: scroll; /* has to be scroll, not auto */
   -webkit-overflow-scrolling: touch;
+}
+.flex-fix {
+  display: -webkit-flex !important;
+}
+.flex-wrap {
+  -webkit-flex-wrap: wrap !important;
+}
+.justify-content-center {
+  -webkit-justify-content: center !important;
+}
+.justify-content-around {
+  -webkit-justify-content: space-around !important;
 }
 .modal.modal-fixed-footer .modal-footer {
   border-top: none;
@@ -63,7 +80,11 @@ button i {
 }
 .artist-gallery-container {
   /* background-color: rgb(33, 179, 162); */
-  width: 100%;
+  /* width: 100%; */
+  margin: 10px 20px;
+}
+.artist-title {
+  margin-bottom: 20px;
 }
 .cover-in-text {
   width: 200px;
@@ -74,12 +95,14 @@ button i {
 /* Cards */
 .card {
   perspective: 50rem;
+  -webkit-perspective: 50rem;
   -moz-perspective: 50rem;
   position: relative;
   margin: 20px;
   height: 200px;
   width: 200px;
   border: none;
+  background-color: black;
  }
   .card__side {
     height: 100%;
@@ -92,13 +115,14 @@ button i {
     -webkit-backface-visibility: hidden;
     border-radius: 3px;
     overflow: hidden;
-    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+    box-shadow: 0 1.5rem 4rem rgba(255, 255, 255, 0.1); }
     .card__side--front {
       color: white;
-      /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
       text-align: center;
       vertical-align: middle;
       font-size: 16px;
+      /* border: 1px solid white; */
+      /* text-shadow: 0 0 3px rgba(0,0,0,.8); */
       /* background-image: linear-gradient(to right bottom, #2998ff, #5643fa);  */
       /* z-index: 50; */
     }
@@ -108,16 +132,20 @@ button i {
       vertical-align: middle;
       font-size: 16px;
       color: white;
+      border: 1px solid white;
       background-image: linear-gradient(to right bottom, #2d2c2c, #000000);
+      -webkit-transform: rotateY(180deg);
       transform: rotateY(180deg); }
       .card:hover .card__side--front {
+        -webkit-transform: rotateY(-180deg);
         transform: rotateY(-180deg); }
       .card:hover .card__side--back {
+        -webkit-transform: rotateY(0);
         transform: rotateY(0); }
     .card-text {
       position: absolute;
       top: 75%;
-      left: 15%;
+      left: 10%;
       /* transform: translate(-50%, -50%); */
     }
 /* Social icons */
@@ -255,6 +283,27 @@ button i {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 
   transition: all .2s;
+}
+.modal-button {
+  margin: 0px 10px;
+  padding: 8px 20px;
+  min-height: 40px;
+  border: none;
+  border-radius: 100px;
+  background-color: white;
+  color: black;
+
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+.modal-icon {
+  font-size: 24px;
+  font-weight: 500;
+  min-height: 100%;
+  min-width: 100%;
 }
 .btn-loop {
   animation: scaleLoop 6s linear;
@@ -429,30 +478,21 @@ button i {
     -webkit-filter: drop-shadow(0px 0px 0px #7cc6ff);
   }
   .modal.modal-fixed-footer .modal-content {
-    background-color: black;
+    /* background-color: black; */
   }
   .modal.modal-fixed-footer .modal-body {
-    background-color: black;
-    color: white;
-    border: 1px solid white;
+    /* background-color: black; */
+    /* color: white; */
+    /* border: 1px solid white; */
   }
   .card {
     height: 110px;
     width: 110px;
     margin: 10px;
-    background-color: black;
   }
   .card__side {
     height: 110px;
-    /* transition: none; */
   }
-  /* .card__side--back {
-    visibility: hidden;
-  }
-  .card:hover .card__side--front {
-    transform: none; }
-  .card:hover .card__side--back {
-    transform: none; } */
   .artist-gallery-container {
     width:100%;
   }
