@@ -268,7 +268,7 @@ function letiste() {
       if (j < randomLetiste.length) {
         writeChar();
       }
-    }, Math.floor(Math.random() * 50) + 10);
+    }, Math.floor(Math.random() * 150) + 50);
   }
   writeChar();
 }

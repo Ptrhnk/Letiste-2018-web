@@ -30,7 +30,7 @@ button i {
   /* overflow: hidden; */
 }
 .modal .modal-footer {
-  height: 56px;
+  height: 58px;
   width: 100%;
   /* text-align: right; */
 }
@@ -40,6 +40,7 @@ button i {
   transform: translate(0%, -50%);
   -o-transform: translate(0%, -50%);
   -webkit-transform: translate(0%, -50%);
+  /* min-height: 70%; */
   max-height: 100%;
   border-radius: none;
   background-color: black;
@@ -47,10 +48,10 @@ button i {
   /* width: 100%; */
 }
 .modal.modal-fixed-footer .modal-body {
-  margin-bottom: 58px;
-  padding-top: 0;
-  border-radius: 0.3rem;
-  background-color: black;
+  margin-bottom: 56px;
+  padding: 20px 0;
+  border-radius: 0.5rem;
+  /* background-color: black; */
   color: white;
   border: 1px solid white;
   overflow-y: scroll; /* has to be scroll, not auto */
@@ -68,15 +69,18 @@ button i {
 .justify-content-around {
   -webkit-justify-content: space-around !important;
 }
+.align-items-center {
+  -webkit-align-items: center !important;
+}
 .modal.modal-fixed-footer .modal-footer {
   border-top: none;
   position: absolute;
   bottom: 0;
+  pointer-events: auto;
   /* height: 56px; */
   /* margin-bottom: 0.5rem; */
-  pointer-events: auto;
   /* width: auto; */
-  background-color: #000000;
+  /* background-color: #000000; */
 }
 .artist-gallery-container {
   /* background-color: rgb(33, 179, 162); */
@@ -89,7 +93,12 @@ button i {
 .cover-in-text {
   width: 200px;
   height: 200px;
-  margin: 20px 0;
+  margin-bottom: 20px;
+  border: 2px solid white;
+}
+.artist-social-icon {
+  height: 64px;
+  width: 64px;
 }
 
 /* Cards */
@@ -132,7 +141,7 @@ button i {
       vertical-align: middle;
       font-size: 16px;
       color: white;
-      border: 1px solid white;
+      /* border: 1px solid white; */
       background-image: linear-gradient(to right bottom, #2d2c2c, #000000);
       -webkit-transform: rotateY(180deg);
       transform: rotateY(180deg); }
@@ -144,9 +153,18 @@ button i {
         transform: rotateY(0); }
     .card-text {
       position: absolute;
-      top: 75%;
-      left: 10%;
-      /* transform: translate(-50%, -50%); */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -o-transform: translate(50%, -50%);
+      -webkit-transform: translate(50%, -50%);
+    }
+    .quest-card {
+      background-image: linear-gradient(to right bottom, #2d2c2c, #000000);
+    }
+    .quest-font {
+      font-weight: 700;
+      font-size: 4rem;
     }
 /* Social icons */
 .dropdown-menu {
@@ -401,11 +419,6 @@ button i {
   border: none;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
-/* .white-button:focus {outline:0;}
-.white-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-} */
 
 /* Písmena */
 .pismeno {
@@ -476,14 +489,6 @@ button i {
     transform: translate(0, 0);
     filter: drop-shadow(0px 0px 0px #7cc6ff);
     -webkit-filter: drop-shadow(0px 0px 0px #7cc6ff);
-  }
-  .modal.modal-fixed-footer .modal-content {
-    /* background-color: black; */
-  }
-  .modal.modal-fixed-footer .modal-body {
-    /* background-color: black; */
-    /* color: white; */
-    /* border: 1px solid white; */
   }
   .card {
     height: 110px;

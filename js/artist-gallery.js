@@ -26,7 +26,7 @@ function showGallery(genre) {
     var textFront = document.createElement('h6');
     textFront.classList.add('card-text', 'mobilvisible');
     textFront.innerHTML = artistName.replace("_", " ");
-    var img = createImg(genre, artistName);
+    var img = createArtistImg(artistName);
     img.classList.add('card__picture');
     var frontSide = document.createElement('div');
     frontSide.classList.add('card__side', 'card__side--front');
@@ -36,14 +36,22 @@ function showGallery(genre) {
     var textBack = document.createElement('h6');
     textBack.innerHTML = artistName.replace("_", " ");
     var backSide = document.createElement('div');
-    backSide.classList.add('card__side', 'card__side--back', 'd-flex', 'align-items-center', 'justify-content-center');
+    backSide.classList.add(
+      'card__side',
+      'card__side--back', 
+      'd-flex',
+      'align-items-center',
+      'justify-content-center',
+      'border',
+      'border-white'
+    );
     backSide.appendChild(textBack);
 
     var a = document.createElement('a');
     a.classList.add('card');
     a.href = 'javascript:;';
     a.id = j.toString();
-    a.onclick = function() { openArtist(genre, artist) };
+    a.onclick = function() { openArtist(artist) };
     a.appendChild(frontSide);
     a.appendChild(backSide);
 
@@ -54,15 +62,13 @@ function showGallery(genre) {
     }
   }
   createArtist();
-
-  
+  var quest = questlove();
+  modalBody.appendChild(quest);
 
   modalBody.scrollTo(0, 0);
 }
 
-function openArtist(genre, artist) {
-  console.log(artist.sc);
-  console.log(artist.yt);
+function openArtist(artist) {
   var artistName = artist.name;
   var modalBody = document.getElementById('modalBody');
   // clean up
@@ -76,32 +82,54 @@ function openArtist(genre, artist) {
   // back.classList.add('d-flex');
   //
   var div = document.createElement('div');
-  div.classList.add('clearfix', 'artist-gallery-container');
+  div.classList.add('clearfix', 'artist-gallery-container', 'd-flex', 'flex-column', 'align-items-center');
 
-  var img = createImg(genre, artistName);
-  img.classList.add('cover-in-text', 'mx-auto', 'd-block', 'rounded-circle', 'img-thumbnail');
+  var img = createArtistImg(artistName);
+  img.classList.add('cover-in-text', 'mx-auto', 'd-flex', 'rounded-circle');
   div.appendChild(img);
 
   var artistTitle = document.createElement('h3');
   artistTitle.classList.add('text-center', 'artist-title');
   artistTitle.innerHTML = artistName.replace("_", " ");
   div.appendChild(artistTitle);
-  // console.log(artists[artist]);
-  // alert(artists.artist.sc);
 
-  var p = document.createElement('p');
-  p.classList.add('text-center');
-  p.innerHTML += readTextFile('/artists/' + genre + '/' + artistName + '.txt');
-  div.appendChild(p);
+  if (artist.text) {
+    var p = document.createElement('p');
+    p.classList.add('text-center');
+    p.innerHTML += readTextFile('/artists/text/' + artistName + '.txt');
+    div.appendChild(p);
+  }
+
+  if (artist.links) {
+    var links = artist.links;
+    var linksContainer = document.createElement('div');
+    linksContainer.classList.add('d-flex', 'flex-row', 'justify-content-center');
+    for (var i = 0; i < links.length; i++) {
+      if (links[i].indexOf('youtube') !== -1 || links[i].indexOf('youtu.be') !== -1) {
+        var icon = document.createElement('img');
+        icon.src = '/images/social_icons/youtube-circle.png';
+        icon.classList.add('rounded-circle', 'artist-social-icon');
+        var link = document.createElement('a');
+        link.href = links[i];
+        link.target = '_blank';
+        link.classList.add('d-flex');
+        // a.classList.add('card');
+        link.appendChild(icon);
+        linksContainer.appendChild(link);
+      }
+    }
+    div.appendChild(linksContainer);
+  }
+  
   modalBody.appendChild(div);
 
-  var modalContent = document.getElementById('modalContent');
+  // var modalContent = document.getElementById('modalContent');
   modalBody.scrollTo(0, 0);
 }
 
-function createImg(genre, artist) {
+function createArtistImg(artist) {
   var img = document.createElement('img');
-  img.src = '/artists/' + genre + '/' + artist + '.jpg';
+  img.src = '/artists/foto/' + artist + '.png';
   if (artist != null) {
     img.alt = artist;
   }
@@ -122,4 +150,32 @@ function readTextFile(file) {
   }
   rawFile.send(null);
   return text;
+}
+
+function questlove() {
+  var textFront = document.createElement('h1');
+  textFront.classList.add('d-flex');
+  textFront.innerHTML = "?";
+  var frontSide = document.createElement('div');
+  frontSide.classList.add('card__side', 'card__side--front', 'quest-card');
+  frontSide.classList.add('d-flex', 'justify-content-center', 'align-items-center');
+  frontSide.appendChild(textFront);
+
+  var textBack = document.createElement('h6');
+  textBack.innerHTML = "Brzy..";
+  var backSide = document.createElement('div');
+  backSide.classList.add(
+    'card__side',
+    'card__side--back',
+    'd-flex', 
+    'align-items-center',
+    'justify-content-center'
+  );
+  backSide.appendChild(textBack);
+
+  var card = document.createElement('div');
+  card.classList.add('card');
+  card.appendChild(frontSide);
+  card.appendChild(backSide);
+  return card;
 }
