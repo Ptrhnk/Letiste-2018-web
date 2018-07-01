@@ -1,3 +1,8 @@
+body {
+  font-family: 'Nova Mono', monospace;
+  /* font-family: 'Roboto', sans-serif; */
+}
+
 .bg-black {
   background-color: rgb(0, 0, 0);
   height: 100vh;
@@ -93,12 +98,26 @@ button i {
 .cover-in-text {
   width: 200px;
   height: 200px;
-  margin-bottom: 20px;
-  border: 2px solid white;
+  margin: 20px 0 25px 0;
+  border: 3px solid white;
+}
+.links-container {
+  margin: 2rem 0 2rem 0;
 }
 .artist-social-icon {
-  height: 64px;
-  width: 64px;
+  margin: 0px 20px 0px 20px;
+  height: 45px;
+  width: 45px;
+}
+.artist-facebook {
+  margin: 0px 20px 0px 20px;
+  height: 32px;
+  width: 32px;
+}
+.artist-website {
+  margin: 0px 20px 0px 20px;
+  height: 36px;
+  width: 36px;
 }
 
 /* Cards */
@@ -175,7 +194,7 @@ button i {
   padding: 0;
   /* position: absolute; */
   /* left: 50%; */
-  transition: all .5s ease;
+  /* transition: all .5s ease; */
 }
 .menu-button {
   /* margin: 0px 10px; */
@@ -185,8 +204,9 @@ button i {
   width: 50px;
   border: none;
   border-radius: 100px;
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
 
   text-transform: uppercase;
   text-decoration: none;
@@ -249,8 +269,8 @@ button i {
   -webkit-animation: logoIntro 2s ease-in-out;
 }
 .logo-shadow {
-  -webkit-filter: drop-shadow(0px 0px 8px rgba(42, 142, 255, 0.7));
-  filter: drop-shadow(0px 0px 3px rgba(42, 142, 255, 0.7));
+  /* -webkit-filter: drop-shadow(0px 0px 8px rgba(42, 142, 255, 0.7)); */
+  /* filter: drop-shadow(0px 0px 3px rgba(42, 142, 255, 0.7)); */
 }
 @keyframes logoIntro {
   0% {
@@ -281,24 +301,45 @@ button i {
     opacity: 1;
   }
 }
+/* datum a místo */
+.drahotuse {
+  text-decoration: none;
+  color: rgba(255, 114, 118, 1);
+
+  animation: logoIntro 2s ease-in-out;
+  -webkit-animation: logoIntro 2s ease-in-out;
+}
+.drahotuse:hover {
+  color: rgba(255, 114, 118, 1);
+}
+.misto {
+  animation: logoIntro 2s ease-in-out;
+  -webkit-animation: logoIntro 2s ease-in-out;
+}
+.datum {
+  animation: logoIntro 2s ease-in-out;
+  -webkit-animation: logoIntro 2s ease-in-out;
+}
 
 /* Menu */
 .btns {
-  margin: 40px 0 46px 0;
+  margin: 20px 0 40px 0;
 }
 .white-button {
   margin: 0px 10px;
-  padding: 8px 20px;
+  padding: 8px 18px;
   border: none;
   border-radius: 100px;
-  background-color: white;
-  color: black;
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+  /* z-index: 999; */
 
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   text-decoration: none;
   font-weight: 700;
-  font-size: 13px;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  font-size: 15px;
+  /* text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); */
 
   transition: all .2s;
 }
@@ -308,8 +349,9 @@ button i {
   min-height: 40px;
   border: none;
   border-radius: 100px;
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
 
   text-transform: uppercase;
   text-decoration: none;
@@ -444,17 +486,18 @@ button i {
 
 @media (max-width: 767px) {
   .bg-black{
-    min-height: 400px;
+    min-height: 420px;
   }
   .left-container {
     margin: 15px 0 0 0px;
   }
   .goout {
     max-height: 50px;
+    border: 1px solid white;
     /* border-radius: 10px; */
     border-radius: 100px;
-    -webkit-filter: drop-shadow(0px 0px 10px #ffffff);
-    filter: drop-shadow(0px 0px 5px #ffffff);
+    -webkit-filter: drop-shadow(0px 0px 10px #ffffff00);
+    filter: drop-shadow(0px 0px 5px #ffffff00);
   }
   .center-box {
     top: 60%;
@@ -471,9 +514,9 @@ button i {
   }
   .white-button {
     margin: 0px 5px;
-    padding: 10px 15px;
+    padding: 8px 15px;
     font-weight: 500;
-    font-size: 12px;
+    font-size: 15px;
   }
   .menu-button {
     margin-top: 15px;
@@ -500,6 +543,10 @@ button i {
   }
   .artist-gallery-container {
     width:100%;
+  }
+  .cover-in-text {
+    width: 160px;
+    height: 160px;
   }
 
   .pcvisible{

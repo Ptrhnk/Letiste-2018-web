@@ -23,9 +23,11 @@ function showGallery(genre) {
     var artist = artists[genre][j];
     var artistName = artists[genre][j].name;
 
-    var textFront = document.createElement('h6');
-    textFront.classList.add('card-text', 'mobilvisible');
-    textFront.innerHTML = artistName.replace("_", " ");
+    // var textFront = document.createElement('h6');
+    // textFront.classList.add('card-text', 'mobilvisible');
+    // artistName = artistName.replace("_", " ");
+    // artistName = artistName.replace("-", "/");
+    // textFront.innerHTML = artistName.replace("_", " ");
     var img = createArtistImg(artistName);
     img.classList.add('card__picture');
     var frontSide = document.createElement('div');
@@ -34,7 +36,12 @@ function showGallery(genre) {
     // frontSide.appendChild(textFront);
 
     var textBack = document.createElement('h6');
-    textBack.innerHTML = artistName.replace("_", " ");
+    var artistNameTitle = artistName;
+    while(artistNameTitle.indexOf('_') !== -1) {
+      artistNameTitle = artistNameTitle.replace("_", " ");
+    }
+    artistNameTitle = artistNameTitle.replace("-", "/");
+    textBack.innerHTML = artistNameTitle;
     var backSide = document.createElement('div');
     backSide.classList.add(
       'card__side',
@@ -90,7 +97,12 @@ function openArtist(artist) {
 
   var artistTitle = document.createElement('h3');
   artistTitle.classList.add('text-center', 'artist-title');
-  artistTitle.innerHTML = artistName.replace("_", " ");
+  var artistNameTitle = artistName;
+  while(artistNameTitle.indexOf('_') !== -1) {
+    artistNameTitle = artistNameTitle.replace("_", " ");
+  }
+  artistNameTitle = artistNameTitle.replace("-", "/");
+  artistTitle.innerHTML = artistNameTitle;
   div.appendChild(artistTitle);
 
   if (artist.text) {
@@ -100,27 +112,58 @@ function openArtist(artist) {
     div.appendChild(p);
   }
 
-  if (artist.links) {
-    var links = artist.links;
-    var linksContainer = document.createElement('div');
-    linksContainer.classList.add('d-flex', 'flex-row', 'justify-content-center');
-    for (var i = 0; i < links.length; i++) {
-      if (links[i].indexOf('youtube') !== -1 || links[i].indexOf('youtu.be') !== -1) {
-        var icon = document.createElement('img');
-        icon.src = '/images/social_icons/youtube-circle.png';
-        icon.classList.add('rounded-circle', 'artist-social-icon');
-        var link = document.createElement('a');
-        link.href = links[i];
-        link.target = '_blank';
-        link.classList.add('d-flex');
-        // a.classList.add('card');
-        link.appendChild(icon);
-        linksContainer.appendChild(link);
-      }
+  if (artist.website || artist.links) {
+  var linksContainer = document.createElement('div');
+  linksContainer.classList.add('d-flex', 'flex-row', 'justify-content-center', 'align-items-center', 'links-container');
+    if (artist.website) {
+      var icon = document.createElement('img');
+      icon.src = '/images/social_icons/website.png';
+      icon.classList.add('artist-website');
+      var link = document.createElement('a');
+      link.href = artist.website;
+      link.target = '_blank';
+      link.classList.add('d-flex');
+      link.appendChild(icon);
+      linksContainer.appendChild(link); 
+    }  
+    if (artist.links) {
+        var links = artist.links;
+        for (var i = 0; i < links.length; i++) {
+          if (links[i].indexOf('youtube') !== -1 || links[i].indexOf('youtu.be') !== -1) {
+            var icon = document.createElement('img');
+            icon.src = '/images/social_icons/youtube.png';
+            icon.classList.add('artist-social-icon');
+            var link = document.createElement('a');
+            link.href = links[i];
+            link.target = '_blank';
+            link.classList.add('d-flex');
+            link.appendChild(icon);
+            linksContainer.appendChild(link);
+          } else if (links[i].indexOf('soundcloud') !== -1) {
+            var icon = document.createElement('img');
+            icon.src = '/images/social_icons/soundcloud.png';
+            icon.classList.add('artist-social-icon');
+            var link = document.createElement('a');
+            link.href = links[i];
+            link.target = '_blank';
+            link.classList.add('d-flex');
+            link.appendChild(icon);
+            linksContainer.appendChild(link);
+          } else if (links[i].indexOf('facebook') !== -1) {
+            var icon = document.createElement('img');
+            icon.src = '/images/social_icons/facebook.png';
+            icon.classList.add('artist-facebook');
+            var link = document.createElement('a');
+            link.href = links[i];
+            link.target = '_blank';
+            link.classList.add('d-flex');
+            link.appendChild(icon);
+            linksContainer.appendChild(link);
+          }
+        }
     }
-    div.appendChild(linksContainer);
+  div.appendChild(linksContainer);
   }
-  
   modalBody.appendChild(div);
 
   // var modalContent = document.getElementById('modalContent');
@@ -162,7 +205,7 @@ function questlove() {
   frontSide.appendChild(textFront);
 
   var textBack = document.createElement('h6');
-  textBack.innerHTML = "Brzy..";
+  textBack.innerHTML = "Soon..";
   var backSide = document.createElement('div');
   backSide.classList.add(
     'card__side',

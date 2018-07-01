@@ -27,6 +27,8 @@ function introAnimation() {
   [].forEach.call(btns, function (btn) {btnsArr.push(btn)});
   var menuBtn = document.getElementsByClassName("menu-button");
   [].forEach.call(menuBtn, function (menu) {btnsArr.push(menu)});
+  var gooutMob = document.getElementsByClassName("goout-mob");
+  [].forEach.call(gooutMob, function (goout) {btnsArr.push(goout)});
   // var socials = document.getElementsByClassName("social-icon");
   // [].forEach.call(socials, function (social) {btnsArr.push(social)});
 
@@ -42,6 +44,7 @@ function introAnimation() {
     }, 700);
   }
   startAnimation();
+
 }
 
 function showLetiste() {
