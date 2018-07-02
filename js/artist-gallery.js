@@ -107,7 +107,7 @@ function openArtist(artist) {
 
   if (artist.text) {
     var p = document.createElement('p');
-    p.classList.add('text-center');
+    p.classList.add('text-center', 'dosis');
     p.innerHTML += readTextFile('/artists/text/' + artistName + '.txt');
     div.appendChild(p);
   }
@@ -118,7 +118,7 @@ function openArtist(artist) {
     if (artist.website) {
       var icon = document.createElement('img');
       icon.src = '/images/social_icons/website.png';
-      icon.classList.add('artist-website');
+      icon.classList.add('artist-website', 'artist-social-margin');
       var link = document.createElement('a');
       link.href = artist.website;
       link.target = '_blank';
@@ -132,7 +132,7 @@ function openArtist(artist) {
           if (links[i].indexOf('youtube') !== -1 || links[i].indexOf('youtu.be') !== -1) {
             var icon = document.createElement('img');
             icon.src = '/images/social_icons/youtube.png';
-            icon.classList.add('artist-social-icon');
+            icon.classList.add('artist-social-icon', 'artist-social-margin');
             var link = document.createElement('a');
             link.href = links[i];
             link.target = '_blank';
@@ -142,7 +142,7 @@ function openArtist(artist) {
           } else if (links[i].indexOf('soundcloud') !== -1) {
             var icon = document.createElement('img');
             icon.src = '/images/social_icons/soundcloud.png';
-            icon.classList.add('artist-social-icon');
+            icon.classList.add('artist-social-icon', 'artist-social-margin');
             var link = document.createElement('a');
             link.href = links[i];
             link.target = '_blank';
@@ -152,7 +152,7 @@ function openArtist(artist) {
           } else if (links[i].indexOf('facebook') !== -1) {
             var icon = document.createElement('img');
             icon.src = '/images/social_icons/facebook.png';
-            icon.classList.add('artist-facebook');
+            icon.classList.add('artist-facebook', 'artist-social-margin');
             var link = document.createElement('a');
             link.href = links[i];
             link.target = '_blank';

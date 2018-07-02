@@ -58,7 +58,7 @@ function showLetiste() {
   ee = document.getElementById("ee");
   hacek_ = document.getElementById("hacek_");
 
-  var charArr = [l, e, t, i, s, hacek, tt, ee, hacek_];
+  var charArr = [l, e, t, i, hacek, tt, hacek_];
   var charArrCopy = charArr.slice();
 
   function startShow(visibility) {

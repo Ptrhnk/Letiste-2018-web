@@ -51,6 +51,14 @@ artists = {
         "https://soundcloud.com/mnchrme"
       ],
     },
+    {
+      name: "Viktor_Lesque",
+      text: true,
+      links: [
+        "https://www.facebook.com/Victorlesque/",
+        "https://soundcloud.com/user-412342058"
+      ],
+    },
   ],
   divadlo: [
     {

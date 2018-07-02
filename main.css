@@ -94,28 +94,35 @@ button i {
 }
 .artist-title {
   margin-bottom: 20px;
+
+  border-bottom: 2px solid white;
+  padding-bottom: 2px;
 }
 .cover-in-text {
   width: 200px;
   height: 200px;
-  margin: 20px 0 25px 0;
+  margin: 10px 0 25px 0;
   border: 3px solid white;
 }
+p {
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+}
 .links-container {
-  margin: 2rem 0 2rem 0;
+  margin: 20px 0;
+}
+.artist-social-margin {
+  margin: 0px 20px 0px 20px;
 }
 .artist-social-icon {
-  margin: 0px 20px 0px 20px;
   height: 45px;
   width: 45px;
 }
 .artist-facebook {
-  margin: 0px 20px 0px 20px;
   height: 32px;
   width: 32px;
 }
 .artist-website {
-  margin: 0px 20px 0px 20px;
   height: 36px;
   width: 36px;
 }
@@ -254,7 +261,7 @@ button i {
 /* Main logo */
 .center-box {
   position: absolute;
-  top: 53%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
@@ -306,19 +313,30 @@ button i {
   text-decoration: none;
   color: rgba(255, 114, 118, 1);
 
-  animation: logoIntro 2s ease-in-out;
-  -webkit-animation: logoIntro 2s ease-in-out;
+  animation: logoIntro 4s ease-in-out;
+  -webkit-animation: logoIntro 4s ease-in-out;
 }
 .drahotuse:hover {
   color: rgba(255, 114, 118, 1);
 }
 .misto {
-  animation: logoIntro 2s ease-in-out;
-  -webkit-animation: logoIntro 2s ease-in-out;
+  width: 150px;
+  height: 20px;
+
+  animation: logoIntro 3s ease-in-out;
+  -webkit-animation: logoIntro 3s ease-in-out;
+  /* animation-delay: .5s; */
+  /* -webkit-animation-delay: .5s; */
 }
 .datum {
-  animation: logoIntro 2s ease-in-out;
-  -webkit-animation: logoIntro 2s ease-in-out;
+  margin: 8px 0;
+  width: 150px;
+  height: 20px;
+
+  animation: logoIntro 3s ease-in-out;
+  -webkit-animation: logoIntro 3s ease-in-out;
+  /* animation-delay: 1s; */
+  /* -webkit-animation-delay: 1s; */
 }
 
 /* Menu */
@@ -464,7 +482,7 @@ button i {
 
 /* Písmena */
 .pismeno {
-  height: 120px;
+  height: 110px;
   visibility: hidden;
 }
 #hacek, #hacek_, #e_, #s_ {
@@ -500,7 +518,7 @@ button i {
     filter: drop-shadow(0px 0px 5px #ffffff00);
   }
   .center-box {
-    top: 60%;
+    top: 58%;
   }
   .btns {
     margin: 20px 0 34px 0;
@@ -548,6 +566,9 @@ button i {
     width: 160px;
     height: 160px;
   }
+  .artist-social-margin {
+    margin: 0px 10px;
+  }
 
   .pcvisible{
     display: none !important;
@@ -558,3 +579,4 @@ button i {
     visibility: visible;
   }
 }
+/*  */
