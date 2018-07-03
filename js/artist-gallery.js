@@ -23,17 +23,11 @@ function showGallery(genre) {
     var artist = artists[genre][j];
     var artistName = artists[genre][j].name;
 
-    // var textFront = document.createElement('h6');
-    // textFront.classList.add('card-text', 'mobilvisible');
-    // artistName = artistName.replace("_", " ");
-    // artistName = artistName.replace("-", "/");
-    // textFront.innerHTML = artistName.replace("_", " ");
     var img = createArtistImg(artistName);
     img.classList.add('card__picture');
     var frontSide = document.createElement('div');
     frontSide.classList.add('card__side', 'card__side--front');
     frontSide.appendChild(img);
-    // frontSide.appendChild(textFront);
 
     var textBack = document.createElement('h6');
     var artistNameTitle = artistName;
@@ -42,6 +36,7 @@ function showGallery(genre) {
     }
     artistNameTitle = artistNameTitle.replace("-", "/");
     textBack.innerHTML = artistNameTitle;
+    textBack.classList.add('card-text');
     var backSide = document.createElement('div');
     backSide.classList.add(
       'card__side',
@@ -49,8 +44,6 @@ function showGallery(genre) {
       'd-flex',
       'align-items-center',
       'justify-content-center',
-      'border',
-      'border-white'
     );
     backSide.appendChild(textBack);
 
@@ -69,8 +62,8 @@ function showGallery(genre) {
     }
   }
   createArtist();
-  var quest = questlove();
-  modalBody.appendChild(quest);
+  // var quest = questlove();
+  // modalBody.appendChild(quest);
 
   modalBody.scrollTo(0, 0);
 }
@@ -114,7 +107,7 @@ function openArtist(artist) {
 
   if (artist.website || artist.links) {
   var linksContainer = document.createElement('div');
-  linksContainer.classList.add('d-flex', 'flex-row', 'justify-content-center', 'align-items-center', 'links-container');
+  linksContainer.classList.add('d-flex', 'flex-row', 'flex-wrap', 'justify-content-center', 'align-items-center', 'links-container');
     if (artist.website) {
       var icon = document.createElement('img');
       icon.src = '/images/social_icons/website.png';
@@ -153,6 +146,16 @@ function openArtist(artist) {
             var icon = document.createElement('img');
             icon.src = '/images/social_icons/facebook.png';
             icon.classList.add('artist-facebook', 'artist-social-margin');
+            var link = document.createElement('a');
+            link.href = links[i];
+            link.target = '_blank';
+            link.classList.add('d-flex');
+            link.appendChild(icon);
+            linksContainer.appendChild(link);
+          } else if (links[i].indexOf('spotify') !== -1) {
+            var icon = document.createElement('img');
+            icon.src = '/images/social_icons/spotify.png';
+            icon.classList.add('artist-spotify', 'artist-social-margin');
             var link = document.createElement('a');
             link.href = links[i];
             link.target = '_blank';
