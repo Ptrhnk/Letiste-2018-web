@@ -3,6 +3,8 @@ artists = {
   jazz: [
     {
       name: "Gerald_Clark",
+      text: true,
+      website: "http://www.thegeraldclark.com/",
       links: [
         "https://www.facebook.com/geraldclarkmusic",
         "https://soundcloud.com/gerald-clark-3",
@@ -11,6 +13,7 @@ artists = {
     },
     {
       name: "Used_To_Be_a_Sofa",
+      text: true,
       links: [
         "https://www.facebook.com/usedtobeasofa/",
         "https://www.youtube.com/watch?v=07MPDJcf8fc"
