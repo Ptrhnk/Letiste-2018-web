@@ -21,7 +21,7 @@ function showGallery(genre) {
   var j = 0;
   function createArtist() {
     var artist = artists[genre][j];
-    var artistName = artists[genre][j].name;
+    var artistName = artist.name;
 
     var img = createArtistImg(artistName);
     img.classList.add('card__picture');
@@ -98,10 +98,16 @@ function openArtist(artist) {
   artistTitle.innerHTML = artistNameTitle;
   div.appendChild(artistTitle);
 
+  // if (artist.text) {
+  //   var p = document.createElement('p');
+  //   p.classList.add('text-center', 'dosis');
+  //   p.innerHTML += readTextFile('/artists/text/' + artistName + '.txt');
+  //   div.appendChild(p);
+  // }
   if (artist.text) {
     var p = document.createElement('p');
     p.classList.add('text-center', 'dosis');
-    p.innerHTML += readTextFile('/artists/text/' + artistName + '.txt');
+    p.innerHTML += artist.text;
     div.appendChild(p);
   }
 
