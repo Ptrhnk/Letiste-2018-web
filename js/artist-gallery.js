@@ -30,11 +30,7 @@ function showGallery(genre) {
     frontSide.appendChild(img);
 
     var textBack = document.createElement('h6');
-    var artistNameTitle = artistName;
-    while(artistNameTitle.indexOf('_') !== -1) {
-      artistNameTitle = artistNameTitle.replace("_", " ");
-    }
-    artistNameTitle = artistNameTitle.replace("-", "/");
+    var artistNameTitle = artist.title;
     textBack.innerHTML = artistNameTitle;
     textBack.classList.add('card-text');
     var backSide = document.createElement('div');
@@ -62,8 +58,6 @@ function showGallery(genre) {
     }
   }
   createArtist();
-  // var quest = questlove();
-  // modalBody.appendChild(quest);
 
   modalBody.scrollTo(0, 0);
 }
@@ -90,20 +84,10 @@ function openArtist(artist) {
 
   var artistTitle = document.createElement('h3');
   artistTitle.classList.add('text-center', 'artist-title');
-  var artistNameTitle = artistName;
-  while(artistNameTitle.indexOf('_') !== -1) {
-    artistNameTitle = artistNameTitle.replace("_", " ");
-  }
-  artistNameTitle = artistNameTitle.replace("-", "/");
+  var artistNameTitle = artist.title;
   artistTitle.innerHTML = artistNameTitle;
   div.appendChild(artistTitle);
 
-  // if (artist.text) {
-  //   var p = document.createElement('p');
-  //   p.classList.add('text-center', 'dosis');
-  //   p.innerHTML += readTextFile('/artists/text/' + artistName + '.txt');
-  //   div.appendChild(p);
-  // }
   if (artist.text) {
     var p = document.createElement('p');
     p.classList.add('text-center', 'dosis');
@@ -130,8 +114,8 @@ function openArtist(artist) {
         for (var i = 0; i < links.length; i++) {
           if (links[i].indexOf('youtube') !== -1 || links[i].indexOf('youtu.be') !== -1) {
             var icon = document.createElement('img');
-            icon.src = '/images/social_icons/youtube.png';
-            icon.classList.add('artist-social-icon', 'artist-social-margin');
+            icon.src = '/images/social_icons/youtube3.png';
+            icon.classList.add('artist-youtube', 'artist-social-margin');
             var link = document.createElement('a');
             link.href = links[i];
             link.target = '_blank';
@@ -140,8 +124,8 @@ function openArtist(artist) {
             linksContainer.appendChild(link);
           } else if (links[i].indexOf('soundcloud') !== -1) {
             var icon = document.createElement('img');
-            icon.src = '/images/social_icons/soundcloud.png';
-            icon.classList.add('artist-social-icon', 'artist-social-margin');
+            icon.src = '/images/social_icons/soundcloud3.png';
+            icon.classList.add('artist-soundcloud', 'artist-social-margin');
             var link = document.createElement('a');
             link.href = links[i];
             link.target = '_blank';
@@ -150,7 +134,7 @@ function openArtist(artist) {
             linksContainer.appendChild(link);
           } else if (links[i].indexOf('facebook') !== -1) {
             var icon = document.createElement('img');
-            icon.src = '/images/social_icons/facebook.png';
+            icon.src = '/images/social_icons/facebook3.png';
             icon.classList.add('artist-facebook', 'artist-social-margin');
             var link = document.createElement('a');
             link.href = links[i];
@@ -160,7 +144,7 @@ function openArtist(artist) {
             linksContainer.appendChild(link);
           } else if (links[i].indexOf('spotify') !== -1) {
             var icon = document.createElement('img');
-            icon.src = '/images/social_icons/spotify.png';
+            icon.src = '/images/social_icons/spotify2.png';
             icon.classList.add('artist-spotify', 'artist-social-margin');
             var link = document.createElement('a');
             link.href = links[i];
@@ -202,32 +186,4 @@ function readTextFile(file) {
   }
   rawFile.send(null);
   return text;
-}
-
-function questlove() {
-  var textFront = document.createElement('h1');
-  textFront.classList.add('d-flex');
-  textFront.innerHTML = "?";
-  var frontSide = document.createElement('div');
-  frontSide.classList.add('card__side', 'card__side--front', 'quest-card');
-  frontSide.classList.add('d-flex', 'justify-content-center', 'align-items-center');
-  frontSide.appendChild(textFront);
-
-  var textBack = document.createElement('h6');
-  textBack.innerHTML = "Soon..";
-  var backSide = document.createElement('div');
-  backSide.classList.add(
-    'card__side',
-    'card__side--back',
-    'd-flex', 
-    'align-items-center',
-    'justify-content-center'
-  );
-  backSide.appendChild(textBack);
-
-  var card = document.createElement('div');
-  card.classList.add('card');
-  card.appendChild(frontSide);
-  card.appendChild(backSide);
-  return card;
 }

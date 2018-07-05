@@ -48,7 +48,7 @@ body {
   /* text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.7); */
 }
 .arrow {
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 button i {
@@ -99,6 +99,9 @@ button i {
 .justify-content-around {
   -webkit-justify-content: space-around !important;
 }
+.justify-content-between {
+  -webkit-justify-content: space-between !important;
+}
 .align-items-center {
   -webkit-align-items: center !important;
 }
@@ -108,9 +111,12 @@ button i {
   margin: 10px 20px;
 }
 .artist-title {
+  /* font-family: 'Dos  is', sans-serif; */
   letter-spacing: 2px;
-  margin-bottom: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
   padding-bottom: 2px;
+  /* width: 100%; */
   border-bottom: 2px solid white;
 }
 .cover-in-text {
@@ -126,7 +132,7 @@ p {
   line-height: 1.6;
 }
 .links-container {
-  margin: 10px 0;
+  margin: 10px 0 !important;
 }
 .artist-social-margin {
   margin: 0px 20px 0px 20px;
@@ -135,17 +141,43 @@ p {
   height: 45px;
   width: 45px;
 }
+.artist-soundcloud {
+  height: 48px;
+  width: 48px;
+}
+.artist-youtube {
+  height: 48px;
+  width: 48px;
+}
 .artist-facebook {
-  height: 32px;
-  width: 32px;
+  height: 40px;
+  width: 40px;
 }
 .artist-website {
   height: 36px;
   width: 36px;
 }
 .artist-spotify {
-  height: 42px;
-  width: 42px;
+  height: 40px;
+  width: 40px;
+}
+.partners-container {
+  font-family: 'Dosis', sans-serif;
+  letter-spacing: 2px;
+}
+.icon-button {
+  /* margin-top: 0px; */
+  /* padding: 5px; */
+  /* border: 2px solid white; */
+  border-radius: 100px;
+  background-color: black;
+  /* border: 2px solid white; */
+  width: 70px;
+  height: 70px;
+}
+.heart {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 
@@ -250,33 +282,32 @@ p {
 }
 .social-icon {
   margin-top: 20px;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
 }
 #insta {
   border-radius: 4px;
 }
 .left-container {
-  margin: 35px 0 0 30px;
+  margin: 35px 0 0 20px;
   text-align: center;
   z-index: 1;
 }
 .goout {
-  height: 60px;
-  border-radius: 10px;
-  -webkit-filter: drop-shadow(0px 0px 10px #7cc6ff);
-  filter: drop-shadow(0px 0px 5px #7cc6ff);
+  border-radius: 30px;
+  max-width: 100%;
+  max-height: 100%;
 }
 .goout-anchor {
-  margin-bottom: 33px;
+  margin-bottom: 30px;
+  height: 60px;
+  width: 60px;
+  border: 2px solid white;
+  border-radius: 30px;
+  /* margin-bottom: 33px; */
 }
 .calendar {
   height: 40px;
-  transform: translate(27%, 0);
-  -o-transform: translate(27%, 0);
-  -webkit-transform: translate(27%, 0);
-  filter: drop-shadow(0px 0px 1.7px #7cc6ff);
-  -webkit-filter: drop-shadow(0px 0px 3px #7cc6ff);
 }
 
 /* Main logo */
@@ -331,11 +362,11 @@ p {
 }
 /* datum a místo */
 .drahotuse {
-  margin: 10px 0;
+  margin-top: 10px;
 
   font-family: 'Dosis', sans-serif;
   text-decoration: none;
-  color: rgba(255, 114, 118, 1);
+  color: #ff7276;
   letter-spacing: 2px;
 
   animation: logoIntro 4s ease-in-out;
@@ -388,17 +419,16 @@ p {
   margin: 0px 10px;
   padding: 8px 20px;
   min-height: 40px;
-  border: none;
   border-radius: 100px;
   background-color: black;
   color: white;
   border: 2px solid white;
 
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   text-decoration: none;
   font-weight: 700;
   font-size: 13px;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  /* text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); */
 }
 .modal-icon {
   font-size: 24px;
@@ -505,7 +535,7 @@ p {
 
 /* Písmena */
 .pismeno {
-  height: 110px;
+  height: 120px;
   visibility: hidden;
 }
 #hacek, #hacek_, #e_, #s_ {
@@ -533,12 +563,13 @@ p {
     margin: 15px 0 0 0px;
   }
   .goout {
-    max-height: 50px;
-    border: 2px solid white;
-    /* border-radius: 10px; */
+    max-width: 100%;
+    max-height: 100%;
     border-radius: 100px;
-    /* -webkit-filter: drop-shadow(0px 0px 10px #ffffff00); */
-    /* filter: drop-shadow(0px 0px 5px #ffffff00); */
+  }
+  .goout-anchor {
+    width: 50px;
+    height: 50px;
   }
   .center-box {
     top: 90px;
@@ -562,7 +593,7 @@ p {
     width: auto !important;
   }
   .white-button {
-    margin: 0px 8px 15px 8px;
+    margin: 0px 8px 10px 8px;
     padding: 8px 15px;
     max-width: 100%;
     font-size: 15px;
@@ -573,14 +604,14 @@ p {
   }
   .social-icon {
     margin: 14px 0px 0 0;
+    width: 32px;
+    height: 32px;
   }
   .calendar {
     /* margin-top: 22px; */
     max-height: 35px;
     min-height: 35px;
     transform: translate(0, 0);
-    filter: drop-shadow(0px 0px 0px #7cc6ff);
-    -webkit-filter: drop-shadow(0px 0px 0px #7cc6ff);
   }
   .card {
     height: 110px;
