@@ -39,7 +39,7 @@ function showGallery(genre) {
       'card__side--back', 
       'd-flex',
       'align-items-center',
-      'justify-content-center',
+      'justify-content-center'
     );
     backSide.appendChild(textBack);
 
