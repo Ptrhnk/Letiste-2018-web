@@ -173,6 +173,10 @@ partners = {
       name: "Swine Daily",
       icon: "medialni/swine_daily.png"
     },
+    {
+      name: "Hranický deník",
+      icon: "partneri/hranicky_denik.png"
+    },
   ],
   partneri: [
     {
@@ -192,10 +196,6 @@ partners = {
       icon: "partneri/ground_sound.png"
     },
     {
-      name: "Hranický deník",
-      icon: "partneri/hranicky_denik.png"
-    },
-    {
       name: "Metro Chill Out Club",
       icon: "partneri/Metro_transp_white.png"
     },
@@ -209,7 +209,7 @@ partners = {
     },
     {
       name: "Vault 42",
-      icon: "partneri/Vault42_logo_white.png"
+      icon: "partneri/Vault42_logotyp_white.png"
     },
     {
       name: "Zeal",
