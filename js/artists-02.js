@@ -128,22 +128,6 @@ artists = {
 partners = {
   financne: [
     {
-      name: "Aura",
-      icon: "financne/aura.png"
-    },
-    {
-      name: "Auto Drei",
-      icon: "financne/auto_drei.png"
-    },
-    {
-      name: "Lumen",
-      icon: "financne/lumen.png"
-    },
-    {
-      name: "Maléř Group",
-      icon: "financne/maler_group.png"
-    },
-    {
       name: "Město Hranice",
       icon: "financne/mesto_hranice.png"
     },
@@ -158,6 +142,22 @@ partners = {
     {
       name: "Nadace život umělce",
       icon: "financne/nzu.png"
+    },
+    {
+      name: "Aura",
+      icon: "financne/aura.png"
+    },
+    {
+      name: "Auto Drei",
+      icon: "financne/auto_drei.png"
+    },
+    {
+      name: "Lumen",
+      icon: "financne/lumen.png"
+    },
+    {
+      name: "Maléř Group",
+      icon: "financne/maler_group.png"
     },
   ],
   medialni: [
