@@ -27,8 +27,10 @@ function introAnimation() {
   [].forEach.call(btns, function (btn) {btnsArr.push(btn)});
   var menuBtn = document.getElementsByClassName("menu-button");
   [].forEach.call(menuBtn, function (menu) {btnsArr.push(menu)});
-  var gooutMob = document.getElementsByClassName("goout-mob");
-  [].forEach.call(gooutMob, function (goout) {btnsArr.push(goout)});
+  var menuBtn = document.getElementsByClassName("heart");
+  [].forEach.call(menuBtn, function (menu) {btnsArr.push(menu)});
+  // var gooutMob = document.getElementsByClassName("goout-anchor");
+  // [].forEach.call(gooutMob, function (goout) {btnsArr.push(goout)});
   // var socials = document.getElementsByClassName("social-icon");
   // [].forEach.call(socials, function (social) {btnsArr.push(social)});
 
@@ -86,9 +88,12 @@ function btnLoop() {
   modalBtns[0].classList.add("btn-loop");
   modalBtns[1].classList.add("btn-loop");
   
-  var btnsGet = document.getElementsByClassName("white-button");
   var btns = new Array();
+  var btnsGet = document.getElementsByClassName("white-button");
   [].forEach.call(btnsGet, function (btn) {btns.push(btn)});
+  var heartBtn = document.getElementsByClassName("heart");
+  [].forEach.call(heartBtn, function (heart) {btns.push(heart)});
+
   function startTrip() {
     var btn = btns.shift();
     setTimeout(function() {

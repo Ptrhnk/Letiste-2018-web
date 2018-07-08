@@ -21,9 +21,12 @@ function partnersGallery() {
 
   for (var i = 0; i < partnerTypes.length; i++) {
     var partnerGroupTitle = document.createElement('h3');
+    partnerGroupTitle.classList.add('partners-title', 'text-center');
     partnerGroupTitle.innerHTML = typeNames[i];
-    allPartnersContainer.appendChild(partnerGroupTitle);
-    var partnerGroup = createPartners(partnerTypes[i]);
+    var partnerGroupLogos = createPartners(partnerTypes[i]);
+    var partnerGroup = document.createElement('div');
+    partnerGroup.appendChild(partnerGroupTitle);
+    partnerGroup.appendChild(partnerGroupLogos);
     allPartnersContainer.appendChild(partnerGroup);
   }
   modalBody.appendChild(allPartnersContainer);
@@ -31,13 +34,13 @@ function partnersGallery() {
 
 function createPartners(category) {
     var groupContainer = document.createElement('div');
-    groupContainer.classList.add('d-flex', 'flex-fix', 'flex-row', 'flex-wrap', 'justify-content-center');
+    groupContainer.classList.add('d-flex', 'flex-fix', 'flex-row', 'flex-wrap', 'justify-content-center', 'partners-group-container');
 
     var j = 0;
     function createPartner() {
         var partner = partners[category][j];
         var partnerContainer = document.createElement('div');
-        partnerContainer.classList.add('d-flex', 'flex-column', 'align-items-center')
+        partnerContainer.classList.add('d-flex', 'flex-column', 'align-items-center', 'partner-container')
         if (partner.name) {
             var partnerTitle = document.createElement('h5');
             partnerTitle.classList.add('text-center');
@@ -47,7 +50,8 @@ function createPartners(category) {
         }
         if (partner.icon) {
             var img = document.createElement('img');
-            img.src = '/images/partners/' + partner.icon;
+            img.src = '/partners/' + partner.icon;
+            img.classList.add('partner-logo');
             partnerContainer.appendChild(img);
         }
         groupContainer.appendChild(partnerContainer);

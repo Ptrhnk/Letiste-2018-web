@@ -165,7 +165,7 @@ function openArtist(artist) {
 
 function createArtistImg(artist) {
   var img = document.createElement('img');
-  img.src = '/artists/foto/' + artist + '.png';
+  img.src = '/artists/' + artist + '.png';
   if (artist != null) {
     img.alt = artist;
   }
