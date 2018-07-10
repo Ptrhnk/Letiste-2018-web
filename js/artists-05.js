@@ -196,6 +196,10 @@ partners = {
       icon: "partneri/ground_sound.png"
     },
     {
+      name: "Lázeňská káva",
+      icon: "partneri/kava_white.png"
+    },
+    {
       name: "Metro Chill Out Club",
       icon: "partneri/Metro_transp_white.png"
     },
