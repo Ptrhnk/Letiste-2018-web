@@ -3,26 +3,9 @@ body {
 
   /* font-family: 'Roboto', sans-serif; */
 }
-/* Scroll bar */
-/* ::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background-color: black;
-  margin: 30px 0;
-}
-::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-  border: 1px dashed white;
-} */
 .btn:focus, .btn.focus {
   outline: none !important;
   box-shadow: none !important;
-}
-::-webkit-scrollbar-thumb:focus {
-  border: 1px dashed grey;
 }
 .bg-black {
   min-height: 750px;
@@ -455,6 +438,8 @@ p {
   text-decoration: none;
   font-weight: 700;
   font-size: 13px;
+
+  width: 35%;
 }
 .modal-icon {
   font-size: 24px;
