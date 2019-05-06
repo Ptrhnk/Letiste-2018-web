@@ -1,58 +1,229 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="cs" dir="ltr">
   <head>
     <meta charset="utf-8">
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- open graph protocol -->
+    <meta name="robots" content="all">
+    <meta name="keywords" content="letište, letište festival, letište 2018, letište hranice, letište fest, letiste2018 , letiste2018.cz , JAZZ , ELEKTRONIKA , DIVADLO ">
+    <meta name="description" content="Informace o line upu a vstupenky na happening Letiště 2018, který se koná 13.7.2018 na letišti u Hranic JAZZ | ELEKTRONIKA | DIVADLO">
+    <meta name="description" content="JAZZ | ELEKTRONIKA | DIVADLO">
+    <meta name="twitter:description" content="Informace o line upu a vstupenky na happening Letiště 2018, který se koná 13.7.2018 na letišti u Hranic JAZZ | ELEKTRONIKA | DIVADLO">
+    <meta property="og:title" content="Letiště Festival" />
+    <meta property="og:url" content="http://letiste2018.cz/" />
+    <meta property="og:description" content="Informace o line upu a vstupenky na happening Letiště 2018, který se koná 13.7.2018 na letišti u Hranic JAZZ | ELEKTRONIKA | DIVADLO">
+    <meta property="og:image" content="http://letiste2018.cz/images/og_image.png">
+    <meta property="og:image:alt" content="Logo">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:secure_url" content="https://letiste2018.cz/images/og_image.png">
+    <meta property="og:image:width" content="300">
+    <meta property="og:image:height" content="200">
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="cs_CZ" />
+    <!-- no cache -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- favicons -->
+    <link rel="canonical" href="http://letiste2018.cz/">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="images/favicons/site.webmanifest">
+    <link rel="mask-icon" href="images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#826c6c">
+    <!-- Bootstr4p and jQuery -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css_custom/main.css" rel="stylesheet">
+    <link href="main-02.css" rel="stylesheet">
     <!-- Font -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <title>Let18</title>
+    <link href="https://fonts.googleapis.com/css?family=Nova+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <!-- Google material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- scripts -->
+    <script src="js/blink-01.js"></script>
+    <script src="js/artist-gallery-01.js"></script>
+    <script src="js/artists-05.js"></script>
+    <script src="js/partners-01.js"></script>
+    <title>Letiště festival 2018</title>
   </head>
-  <body>
-    <div class="container vertical-center">
-        <div class="col-xs">
-          <img class="logo blue-shadow" src="images/logo-w.png" alt="logo">
-        </div>
-      <div class="btns">
-        <div class="col-xs text-center">
-          <a href="#" class="btn">Jazz</a>
-        </div>
-        <div class="col-xs text-center">
-          <a href="#" class="btn">Elektronika</a>
-        </div>
-        <div class="col-xs text-center">
-          <a href="#" class="btn">Divadlo</a>
+  <body id="body">
+    <h1 class="text-hide d-none">Letiště festival 2018</h1>
+    <div class="container-fluid d-flex justify-content-between bg-black">
+      <!-- Left Container -->
+      <div class="left-container d-flex flex-column align-items-center">
+        <a class="d-flex goout-anchor" data-toggle="tooltip" data-placement="right" title="Koupit lístky" target="_blank" href="https://goout.net/cs/listky/letiste-festival-2018/qidc/">
+          <img src="images/mobil/goout-mob.png"
+          alt="Tickets"
+          class="goout pcvisible"
+          id="rotateToggle">
+          <img src="images/mobil/goout-mob.png" alt="Tickets" class="goout mobilvisible goout-mob" id="rotateToggle"  >
+        </a>
+        <a class="d-flex pcvisible" data-toggle="tooltip" data-placement="right" title="Uložit datum" target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&tmeid=NzljY2tyczhzaWlndDNkYzZhZzJzNm9iOWUgYWlyZm9yY2Vwcm9kdWN0aW9uLmN6X2E0ZDNoZWY1ajFxNGowamZzOXN1ZHFydG1nQGc&tmsrc=airforceproduction.cz_a4d3hef5j1q4j0jfs9sudqrtmg%40group.calendar.google.com">
+          <img src="images/mobil/calendar-mob.png"
+          class="calendar"
+          alt="Google Calendar">
+        </a>
+      </div>
+      <!-- Social icons -->
+      <div class="social-icons d-flex flex-column pcvisible">
+        <a class="d-flex" href="https://www.facebook.com/letistedisaster/" target="_blank">
+          <img src="images/social_icons/facebook3.png" class="social-icon pcvisible" alt="Facebook">
+        </a>
+        <a  class="d-flex" href="https://www.twitter.com/letistefest/" target="_blank">
+          <img src="images/social_icons/twitter.png" class="social-icon pcvisible" alt="Twitter">
+        </a>
+        <a  class="d-flex" href="https://www.instagram.com/letistedisaster/" target="_blank">
+          <img src="images/social_icons/instagram.png" class="social-icon pcvisible" id="insta" alt="Instagram">
+        </a>
+        <a  class="d-flex mobilvisible" title="Google Calendar" target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&tmeid=NzljY2tyczhzaWlndDNkYzZhZzJzNm9iOWUgYWlyZm9yY2Vwcm9kdWN0aW9uLmN6X2E0ZDNoZWY1ajFxNGowamZzOXN1ZHFydG1nQGc&tmsrc=airforceproduction.cz_a4d3hef5j1q4j0jfs9sudqrtmg%40group.calendar.google.com">
+          <img src="images/mobil/calendar-mob.png" class="calendar social-icon" alt="Google Calendar"  >
+        </a>
+      </div>
+        <div class="dropdown mobilvisible">
+        <button class="btn menu-button invisible" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="material-icons">
+            menu
+          </i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+          <div class="d-flex flex-column">
+            <a class="d-flex" href="https://www.facebook.com/letistedisaster/" target="_blank">
+              <img src="images/social_icons/facebook3.png" class="social-icon mobilvisible" alt="Facebook"  >
+            </a>
+            <a  class="d-flex" href="https://www.twitter.com/letistefest/" target="_blank">
+              <img src="images/social_icons/twitter.png" class="social-icon mobilvisible" alt="Twitter"  >
+            </a>
+            <a  class="d-flex" href="https://www.instagram.com/letistedisaster/" target="_blank">
+              <img src="images/social_icons/instagram.png" class="social-icon mobilvisible" id="insta" alt="Instagram"  >
+            </a>
+            <a  class="d-flex" title="Google Calendar" target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&tmeid=NzljY2tyczhzaWlndDNkYzZhZzJzNm9iOWUgYWlyZm9yY2Vwcm9kdWN0aW9uLmN6X2E0ZDNoZWY1ajFxNGowamZzOXN1ZHFydG1nQGc&tmsrc=airforceproduction.cz_a4d3hef5j1q4j0jfs9sudqrtmg%40group.calendar.google.com">
+              <img src="images/mobil/calendar-mob.png" class="calendar social-icon mobilvisible" alt="Google Calendar"  >
+            </a>
+          </div>
         </div>
       </div>
-        <div class="pismena">
-          <div class="col-xs pismeno-box">
-            <img class="pismeno" src="images/pismena/l.png" alt="L" id="l" onload="blinkRandom()">
+      <!-- Center block -->
+      <div class="center-box d-flex flex-column justify-content-center align-items-center">
+        <!-- Main logo -->
+        <div class="d-flex flex-row justify-content-center">
+          <img class="logo blue-shadow" src="images/logo-red.png" id="logo" alt="logo">
+        </div>
+        <!-- datum a místo -->
+        <div class="d-flex justify-content-center">
+          <img src="images/hranice-na-morave.png" alt="" class="misto">
+        </div>
+        <div class="d-flex justify-content-center">
+          <img src="images/datum.png" alt="" class="datum">
+        </div>
+        <a href="https://goo.gl/maps/1cTaKdS4bKP2" data-toggle="tooltip" data-placement="left" title="Mapa" target="_blank" class="d-flex justify-content-center drahotuse" style="font-size: 10px">
+            Letiště Drahotuše<br>
+            Czech Republic
+        </a>
+        <!-- Menu btns -->
+        <div class="btns d-flex flex-row justify-content-center flex-wrap">
+          <button type="button"
+            data-toggle="modal"
+            data-target="#modalCenter"
+            data-genre="Jazz"
+            class="btn white-button invisible"
+            onclick="showGallery(this.id)"
+            id="jazz">
+            Jazz
+          </button type="button">
+          <button type="button"
+            data-toggle="modal"
+            data-target="#modalCenter"
+            data-genre="Elektronika"
+            class="btn white-button invisible"
+            onclick="showGallery(this.id)"
+            id="elektronika">
+            Elektronika
+          </button type="button">
+          <button type="button"
+            data-toggle="modal"
+            data-target="#modalCenter"
+            data-genre="Divadlo"
+            class="btn white-button invisible"
+            onclick="showGallery(this.id)"
+            id="divadlo">
+            Divadlo
+          </button type="button">
+        </div>
+        <button type="button"
+        data-toggle="modal"
+        data-target="#modalCenter"
+        class="btn icon-button d-flex justify-content-center align-items-center"
+        onclick="partnersGallery()"
+        id="partners">
+          <img src="images/heart.png" alt="Partneři" class="heart invisible">
+        </button type="button">
+        <!-- Písmena -->
+        <div class="pismena d-flex flex-row">
+          <div class="d-flex flex-row flex-nowrap">
+            <img class="pismeno" src="images/pismena/l.png" alt="L" id="l">
           </div>
-          <div class="col-xs pismeno-box">
+          <div class="d-flex flex-row flex-nowrap">
             <img class="pismeno" src="images/pismena/e.png" alt="E" id="e">
           </div>
-          <div class="col-xs pismeno-box">
+          <div class="d-flex flex-row flex-nowrap">
             <img class="pismeno" src="images/pismena/t.png" alt="T" id="t">
           </div>
-          <div class="col-xs pismeno-box">
+          <div class="d-flex flex-row flex-nowrap">
             <img class="pismeno" src="images/pismena/i.png" alt="I" id="i">
           </div>
-          <div class="col-xs pismeno-box">
+          <div class="d-flex flex-row flex-nowrap">
             <img class="pismeno" src="images/pismena/hacek.png" alt="S-hacek" id="hacek">
             <img class="pismeno" src="images/pismena/s.png" alt="S" id="s">
           </div>
-          <div class="col-xs pismeno-box">
+          <div class="d-flex flex-row flex-nowrap">
             <img class="pismeno" src="images/pismena/t.png" alt="T" id="tt">
           </div>
-          <div class="col-xs pismeno-box">
+          <div class="d-flex flex-row flex-nowrap">
             <img class="pismeno" src="images/pismena/hacek.png" alt="E-hacek" id="hacek_">
             <img class="pismeno" src="images/pismena/e.png" alt="E" id="ee">
           </div>
         </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade modal-fixed-footer" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content" id="modalContent">
+            <div class="modal-body d-flex flex-fix flex-row flex-wrap justify-content-center" id="modalBody">
+                ...
+            </div>
+            <div class="modal-footer d-flex flex-fix flex-row justify-content-around">
+              <button type="button" class="btn modal-button justify-content-center invisible" onclick="" id="back">
+                <i class="material-icons modal-icon d-flex justify-content-center">
+                  arrow_back
+                </i>
+              </button>
+              <button type="button" class="btn modal-button d-flex justify-content-center" data-dismiss="modal" aria-label="Close">
+                <i class="material-icons modal-icon d-flex justify-content-center ">
+                  close
+                </i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+
+    <!-- scripts -->
+    <script>
+    // bootstrap tooltip
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip({
+          delay: { "show": 500, "hide": 100 }
+        });
+    });
+    </script>
   </body>
 </html>
